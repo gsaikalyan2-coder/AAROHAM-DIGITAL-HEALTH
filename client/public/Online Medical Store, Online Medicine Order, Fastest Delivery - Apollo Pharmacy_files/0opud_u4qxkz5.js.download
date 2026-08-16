@@ -1,0 +1,183 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,730564,e=>{"use strict";var t=e.i(271645);let r={alertContainer:"kP",top:"lP",bottom:"mP",alertContent:"nP",success:"oP",error:"pP",warning:"qP",info:"rP",closealert:"sP",warningAlertContainer:"tP",warningAlert:"uP",warningAlertHeader:"vP",warningAlertBody:"wP",alertActions:"xP"};var a=e.i(590392),n=e.i(846950),o=e.i(196483);e.s(["Alerts",0,e=>{let{message:s,severity:i,placement:u,open:d,className:l,modalAlert:c,title:_,buttonText:p,autoHide:m,children:E,onClick:f}=e,[R,I]=(0,t.useState)(d),A="string"==typeof i?i.toLowerCase().trim():"",S=o.SANITIZED_ALERT_ROLE_MAPPINGS[A]||"status",b=o.SANITIZED_ALERT_ARIA_LIVE_MAPPINGS[A]||"polite",v=()=>{I(!1),null==f||f(),T()},T=()=>{let e=document.body.parentNode;document.querySelectorAll(".alertOpen").length<=1?e.classList.remove("overflow-hidden-ui"):e.classList.add("overflow-hidden-ui")};return(0,t.useEffect)(()=>{if(I(d),d){I(d);let e=document.body.parentNode;c&&e.classList.add("overflow-hidden-ui")}else T()},[d]),(0,t.useEffect)(()=>{if(!d||!m)return;let e=setTimeout(()=>{I(!1)},Math.max("number"==typeof m?m:0,o.ALERT_AUTO_HIDE_MIN_DURATION));return()=>clearTimeout(e)},[d,m]),(0,t.useEffect)(()=>()=>{T()},[]),t.default.createElement(t.default.Fragment,null,R&&t.default.createElement(t.default.Fragment,null,c?t.default.createElement("div",{className:`${r.warningAlertContainer} alertOpen ${l||""}  ${r[u]}`},t.default.createElement("div",{className:r.warningAlert},t.default.createElement("div",{className:`${r.warningAlertHeader} ${i?r[i]:""}`},_),t.default.createElement("div",{className:r.warningAlertBody},t.default.createElement("p",{className:i?r[i]:""},s),t.default.createElement("div",{className:`${r.alertActions} ${i?r[i]:""}`},p&&t.default.createElement(a.default,{color:"primary",className:i?r[i]:"",onClick:v},p),E)))):t.default.createElement("div",{className:`${r.alertContainer} ${l||""}  ${r[u]}`,role:S,"aria-live":b},t.default.createElement("div",{className:`${r.alertContent} ${i?r[i]:""}`},t.default.createElement("p",null,s),t.default.createElement("div",{className:r.closealert,onClick:v,onKeyDown:e=>{"Enter"===e.key&&(null==v||v())},role:"button",tabIndex:0},t.default.createElement(n.default,{src:"https://images.apollo247.in/images/ic_round_clear.svg",alt:"clear",width:16,height:16,title:"Round Clear"}))))))}],730564)},949616,e=>{"use strict";e.s(["default",0,function(e,t){(null==t||t>e.length)&&(t=e.length);for(var r=0,a=Array(t);r<t;r++)a[r]=e[r];return a}])},212895,(e,t,r)=>{t.exports=function(e,t){for(var r=-1,a=null==e?0:e.length;++r<a&&!1!==t(e[r],r,e););return e}},4300,(e,t,r)=>{var a=e.r(674548),n=e.r(25172),o=Object.prototype.hasOwnProperty;t.exports=function(e,t,r){var s=e[t];o.call(e,t)&&n(s,r)&&(void 0!==r||t in e)||a(e,t,r)}},372351,(e,t,r)=>{var a=e.r(4300),n=e.r(674548);t.exports=function(e,t,r,o){var s=!r;r||(r={});for(var i=-1,u=t.length;++i<u;){var d=t[i],l=o?o(r[d],e[d],d,r,e):void 0;void 0===l&&(l=e[d]),s?n(r,d,l):a(r,d,l)}return r}},860196,(e,t,r)=>{var a=e.r(372351),n=e.r(33679);t.exports=function(e,t){return e&&a(t,n(t),e)}},181198,(e,t,r)=>{var a=e.r(367426),n=e.r(877289);t.exports=function(e){return n(e)&&"[object Map]"==a(e)}},425393,(e,t,r)=>{var a=e.r(263750);t.exports=function(e){var t=new e.constructor(e.byteLength);return new a(t).set(new a(e)),t}},664146,(e,t,r)=>{var a=e.r(425393);t.exports=function(e,t){var r=t?a(e.buffer):e.buffer;return new e.constructor(r,e.byteOffset,e.byteLength)}},984046,(e,t,r)=>{var a=/\w*$/;t.exports=function(e){var t=new e.constructor(e.source,a.exec(e));return t.lastIndex=e.lastIndex,t}},622781,(e,t,r)=>{var a=e.r(139088),n=r&&!r.nodeType&&r,o=n&&t&&!t.nodeType&&t,s=o&&o.exports===n?a.Buffer:void 0,i=s?s.allocUnsafe:void 0;t.exports=function(e,t){if(t)return e.slice();var r=e.length,a=i?i(r):new e.constructor(r);return e.copy(a),a}},776736,(e,t,r)=>{t.exports=function(e,t){var r=-1,a=e.length;for(t||(t=Array(a));++r<a;)t[r]=e[r];return t}},298430,(e,t,r)=>{var a=e.r(630353),n=a?a.prototype:void 0,o=n?n.valueOf:void 0;t.exports=function(e){return o?Object(o.call(e)):{}}},514712,(e,t,r)=>{var a=e.r(425393);t.exports=function(e,t){var r=t?a(e.buffer):e.buffer;return new e.constructor(r,e.byteOffset,e.length)}},749769,(e,t,r)=>{var a=e.r(425393),n=e.r(664146),o=e.r(984046),s=e.r(298430),i=e.r(514712);t.exports=function(e,t,r){var u=e.constructor;switch(t){case"[object ArrayBuffer]":return a(e);case"[object Boolean]":case"[object Date]":return new u(+e);case"[object DataView]":return n(e,r);case"[object Float32Array]":case"[object Float64Array]":case"[object Int8Array]":case"[object Int16Array]":case"[object Int32Array]":case"[object Uint8Array]":case"[object Uint8ClampedArray]":case"[object Uint16Array]":case"[object Uint32Array]":return i(e,r);case"[object Map]":case"[object Set]":return new u;case"[object Number]":case"[object String]":return new u(e);case"[object RegExp]":return o(e);case"[object Symbol]":return s(e)}}},646352,(e,t,r)=>{var a=e.r(12447),n=Object.create;t.exports=function(){function e(){}return function(t){if(!a(t))return{};if(n)return n(t);e.prototype=t;var r=new e;return e.prototype=void 0,r}}()},992433,(e,t,r)=>{var a=e.r(646352),n=e.r(962413),o=e.r(763996);t.exports=function(e){return"function"!=typeof e.constructor||o(e)?{}:a(n(e))}},174071,(e,t,r)=>{var a=e.r(372351),n=e.r(717332);t.exports=function(e,t){return a(e,n(e),t)}},524251,(e,t,r)=>{var a=e.r(841920);t.exports=function(){try{var e=a(Object,"defineProperty");return e({},"",{}),e}catch(e){}}()},674548,(e,t,r)=>{var a=e.r(524251);t.exports=function(e,t,r){"__proto__"==t&&a?a(e,t,{configurable:!0,enumerable:!0,value:r,writable:!0}):e[t]=r}},807889,(e,t,r)=>{var a=e.r(823403),n=e.r(233648),o=e.r(689695);t.exports=function(e){return a(e,o,n)}},962413,(e,t,r)=>{t.exports=e.r(825717)(Object.getPrototypeOf,Object)},233648,(e,t,r)=>{var a=e.r(169102),n=e.r(962413),o=e.r(717332),s=e.r(45159);t.exports=Object.getOwnPropertySymbols?function(e){for(var t=[];e;)a(t,o(e)),e=n(e);return t}:s},345001,(e,t,r)=>{var a=e.r(372351),n=e.r(233648);t.exports=function(e,t){return a(e,n(e),t)}},153265,(e,t,r)=>{var a=Object.prototype.hasOwnProperty;t.exports=function(e){var t=e.length,r=new e.constructor(t);return t&&"string"==typeof e[0]&&a.call(e,"index")&&(r.index=e.index,r.input=e.input),r}},513730,(e,t,r)=>{t.exports=function(e){var t=[];if(null!=e)for(var r in Object(e))t.push(r);return t}},385689,(e,t,r)=>{var a=e.r(12447),n=e.r(763996),o=e.r(513730),s=Object.prototype.hasOwnProperty;t.exports=function(e){if(!a(e))return o(e);var t=n(e),r=[];for(var i in e)"constructor"==i&&(t||!s.call(e,i))||r.push(i);return r}},954284,(e,t,r)=>{var a=e.r(181198),n=e.r(233999),o=e.r(180156),s=o&&o.isMap;t.exports=s?n(s):a},936206,(e,t,r)=>{var a=e.r(367426),n=e.r(877289);t.exports=function(e){return n(e)&&"[object Set]"==a(e)}},240158,(e,t,r)=>{var a=e.r(936206),n=e.r(233999),o=e.r(180156),s=o&&o.isSet;t.exports=s?n(s):a},64324,(e,t,r)=>{var a=e.r(901551),n=e.r(212895),o=e.r(4300),s=e.r(860196),i=e.r(52624),u=e.r(622781),d=e.r(776736),l=e.r(174071),c=e.r(345001),_=e.r(413370),p=e.r(807889),m=e.r(367426),E=e.r(153265),f=e.r(749769),R=e.r(992433),I=e.r(45350),A=e.r(356956),S=e.r(954284),b=e.r(12447),v=e.r(240158),T=e.r(33679),h=e.r(689695),y="[object Arguments]",C="[object Function]",N="[object Object]",O={};O[y]=O["[object Array]"]=O["[object ArrayBuffer]"]=O["[object DataView]"]=O["[object Boolean]"]=O["[object Date]"]=O["[object Float32Array]"]=O["[object Float64Array]"]=O["[object Int8Array]"]=O["[object Int16Array]"]=O["[object Int32Array]"]=O["[object Map]"]=O["[object Number]"]=O[N]=O["[object RegExp]"]=O["[object Set]"]=O["[object String]"]=O["[object Symbol]"]=O["[object Uint8Array]"]=O["[object Uint8ClampedArray]"]=O["[object Uint16Array]"]=O["[object Uint32Array]"]=!0,O["[object Error]"]=O[C]=O["[object WeakMap]"]=!1,t.exports=function e(t,r,D,P,g,U){var w,L=1&r,j=2&r,k=4&r;if(D&&(w=g?D(t,P,g,U):D(t)),void 0!==w)return w;if(!b(t))return t;var x=I(t);if(x){if(w=E(t),!L)return d(t,w)}else{var F=m(t),H=F==C||"[object GeneratorFunction]"==F;if(A(t))return u(t,L);if(F==N||F==y||H&&!g){if(w=j||H?{}:R(t),!L)return j?c(t,i(w,t)):l(t,s(w,t))}else{if(!O[F])return g?t:{};w=f(t,F,L)}}U||(U=new a);var $=U.get(t);if($)return $;U.set(t,w),v(t)?t.forEach(function(a){w.add(e(a,r,D,a,t,U))}):S(t)&&t.forEach(function(a,n){w.set(n,e(a,r,D,n,t,U))});var B=k?j?p:_:j?h:T,M=x?void 0:B(t);return n(M||t,function(a,n){M&&(a=t[n=a]),o(w,n,e(a,r,D,n,t,U))}),w}},271944,(e,t,r)=>{var a=e.r(64324);t.exports=function(e){return a(e,5)}},689695,(e,t,r)=>{var a=e.r(458877),n=e.r(385689),o=e.r(351095);t.exports=function(e){return o(e)?a(e,!0):n(e)}},52624,(e,t,r)=>{var a=e.r(372351),n=e.r(689695);t.exports=function(e,t){return e&&a(t,n(t),e)}},547447,644067,e=>{"use strict";var t=e.i(843476),r=e.i(709356),a=e.i(412250),n=e.i(772746),o=e.i(547464),s=e.i(742759);let i=(e,r="svg")=>(0,t.jsx)(o.ImageKit,{className:"icon",src:`https://images.apollo247.in/images/help_section/${e}.${r}`,alt:"no photo"}),u={medicines:i("medicines_svg"),circle_membership:i("circle_membership_svg"),membership:i("circle_membership_svg"),lab_tests:i("lab_tests_svg"),doctor_appointments:i("doctor_appoinments_svg"),appoinments:i("doctor_appoinments_svg"),health_records:i("health_records_svg"),oneapollo_membership:i("oneapollo_membership_svg"),cross:i("cross_svg"),upload_files:i("upload_files_svg"),unsubscribe:(0,t.jsx)("span",{className:`${r.default["icon-notificationOff"]}`}),system_chat:i("system_chat_icon"),agent_icon:i("agent_icon"),upload_clip:i("upload_clip"),brown_check:i("brown_check","png"),red_cross:i("red_cross"),faqs:i("faq"),other_bu:i("other_bu"),green_check:i("green_check"),loader:i("loader"),kbc_ghar_baithe_jeeto_contest_related_queries:i("kbc_logo")},d="chatUserId",l=async e=>{try{let t=`${(0,a.apiHostBaseUri)()}/support/protected/freshchat`;return await (0,s.default)({url:t,method:"POST",body:e,token:n.NEXT_PUBLIC_PHARMACY_MED_AUTH_TOKEN,headers:{"x-web":!0}})}catch(e){return null}},c=async e=>{try{let t=`${(0,a.apiHostBaseUri)()}/support/chat/chat-frontend/chat-session-information`;return await (0,s.default)({url:t,method:"POST",body:e,token:n.NEXT_PUBLIC_PHARMACY_MED_AUTH_TOKEN,headers:{"x-web":!0,"x-app-version":"8.7.0"}})}catch(e){return null}};e.s(["CHAT_USER_ID_KEY",0,d,"TabPanel",0,e=>{let{children:a,value:n,index:o,...s}=e;return(0,t.jsx)("div",{role:"tabpanel",hidden:n!==o,id:`full-width-tabpanel-${o}`,"aria-labelledby":`full-width-tab-${o}`,...s,className:r.default.panel,children:n===o&&e.children})},"cancelOrderStaticKb",0,"Your order is processed. If you still wish to cancel, please reject the delivery at your doorstep.","categoryIcons",0,u,"initiateChatBotSessionApi",0,c,"notifyTicketCreation",0,l,"returnableCategories",0,["i_would_like_to_return_the_order","i_would_like_to_return_the_order_v2","partial_delivery_wrong_quantity","wrong_items_were_delivered","expiry_date_related_issue","damaged_items"],"underScoreText",0,e=>{if(!e)return"";{let t=e.toLowerCase()?.split(" ");return t?.join("_")}}],644067);var _=e.i(864286),p=e.i(271645);let m=(0,p.createContext)(void 0);e.s(["ChatFlowProvider",0,({children:e})=>{let[r,a]=(0,p.useState)({isOpen:!1,sessionId:null,orderId:null}),n=(0,p.useCallback)(()=>{a({isOpen:!1,sessionId:null,orderId:null})},[]),o=(0,p.useCallback)(async(e,t,r,n)=>{try{a({isOpen:!1,sessionId:null,orderId:null});let{chatSessionId:o}=await c({orderId:"0"===e?"":e,billNumber:t,patientId:r,mobileNumber:n,businessType:"Medicines",isWeb:!0});if(o)return(0,_.isBrowser)()&&localStorage.setItem(d,o),a({isOpen:!0,sessionId:o,orderId:e}),o}catch(e){a({isOpen:!1,sessionId:null,orderId:null})}return null},[]);return(0,t.jsx)(m.Provider,{value:{state:r,openChat:o,closeChat:n},children:e})},"useChatFlow",0,()=>{let e=(0,p.useContext)(m);if(!e)throw Error("useChatFlow must be used within a ChatFlowProvider");return e}],547447)},709356,e=>{e.v({"icon-notificationOff":"TabStyles-module-scss-module__Nahqyq__icon-notificationOff",panel:"TabStyles-module-scss-module__Nahqyq__panel",paperRoot:"TabStyles-module-scss-module__Nahqyq__paperRoot",tabContainer:"TabStyles-module-scss-module__Nahqyq__tabContainer",tabFont:"TabStyles-module-scss-module__Nahqyq__tabFont",tabIndicator:"TabStyles-module-scss-module__Nahqyq__tabIndicator"})},216756,e=>{"use strict";var t=e.i(702807);let r=t.default`
+  query GetAppointmentData($appointmentId: String!) {
+    getAppointmentData(appointmentId: $appointmentId) {
+      appointmentsHistory {
+        id
+        appointmentDateTime
+        appointmentType
+        displayId
+        appointmentState
+        status
+        caseSheet {
+          id
+          blobName
+          blobUrl
+          prismFileId
+          doctorType
+          medicinePrescription {
+            id
+            medicineName
+          }
+          patientDetails {
+            firstName
+          }
+        }
+        doctorInfo {
+          mobileNumber
+          id
+          firstName
+          lastName
+          displayName
+          fullName
+          specialty {
+            name
+          }
+        }
+        patientInfo {
+          firstName
+          lastName
+        }
+      }
+    }
+  }
+`,a=t.default`
+  mutation bookPharmacyConsultForOnHoldOrders(
+    $orderAutoId: Int!
+    $patientId: String!
+    $contactNumber: String
+  ) {
+    bookPharmacyConsultForOnHoldOrders(
+      orderAutoId: $orderAutoId
+      patientId: $patientId
+      contactNumber: $contactNumber
+    ) {
+      status
+    }
+  }
+`;e.s(["BOOK_VC_FOR_ONHOLD_ORDERS",0,a,"GET_APPOINTMENT_DATA",0,r])},928558,e=>{"use strict";var t=e.i(702807);let r=t.default`
+  query getOrderReturnItemsDetails($orderId: Int!) {
+    getOrderReturnItemsDetails(orderId: $orderId) {
+      billUploadUrl
+      id
+      medicineOrderLineItems {
+        itemReturnable
+        itemValue
+        medicineName
+        medicineSku
+        quantity
+        returnType
+        returnValue
+        timeWindow
+      }
+      orderAutoId
+      orderReturnable
+      showReturnButton
+      paymentDetails {
+        id
+        paymentType
+        amountPaid
+        paymentRefId
+        paymentStatus
+        paymentDateTime
+        responseCode
+        responseMessage
+        bankTxnId
+        healthCreditsRedeemed
+        healthCreditsRedemptionRequest {
+          Success
+          Message
+          RequestNumber
+          AvailablePoints
+          BalancePoints
+          RedeemedPoints
+          PointsValue
+        }
+        paymentMode
+        refundAmount
+        paymentMethod
+      }
+      returnPolicyUrl
+      returnRequestId
+      returnRequestRaised
+    }
+  }
+`,a=t.default`
+  query getReturnReasons {
+    getReturnReasons {
+      id
+      imageRequired
+      reason
+      reasonCode
+    }
+  }
+`,n=t.default`
+  mutation saveReturnRequest($returnPostOrderInput: ReturnPostOrderInput) {
+    saveReturnRequest(returnPostOrderInput: $returnPostOrderInput) {
+      returnRequestID
+      status
+    }
+  }
+`,o=t.default`
+  mutation savePaymentIdForReturnCod(
+    $hashId: String!
+    $modeOfRefund: RETURNS_COD_PREFERENCE!
+    $orderId: Int!
+    $paymentId: String
+  ) {
+    savePaymentIdForReturnCod(
+      hashId: $hashId
+      modeOfRefund: $modeOfRefund
+      orderId: $orderId
+      paymentId: $paymentId
+    )
+  }
+`,s=t.default`
+  query getHashUrlPaymentStatusForReturnCod($hashId: String!, $orderId: Int!) {
+    getHashUrlPaymentStatusForReturnCod(hashId: $hashId, orderId: $orderId) {
+      isHashUrlExpired
+      isPaymentDetailsAlreadyPresent
+    }
+  }
+`,i=t.default`
+  mutation uploadNeedImage($needImageDetails: NeedImageDetails) {
+    uploadNeedImage(needImageDetails: $needImageDetails) {
+      status
+      returnRequestID
+    }
+  }
+`,u=t.default`
+  query getReturnRequestedDetails($returnRequestId: String!) {
+    getReturnRequestedDetails(returnRequestId: $returnRequestId) {
+      requestStatus
+      orderId
+      returnRequestId
+      content
+      orderNeedImage
+      refundDetails {
+        completedDate
+        createdDate
+        expectedRefundTime
+        mode
+        orderId
+        refundAmount
+        refundId
+        refundNotes
+        refundReason
+        refundStatus
+        returnRequestId
+        rrn
+      }
+      returnedItemDetails {
+        id
+        itemStatus
+        name
+        sku
+        quantity
+        returnValue
+        itemHeader
+        itemHeaderSequence
+        itemNeedImage
+      }
+    }
+  }
+`;e.s(["GET_HASH_URL_PAYMENT_STATUS_FOR_RETURN_COD",0,s,"GET_ORDER_RETURN_ITEM_DETAILS",0,r,"GET_RETURN_REASONS",0,a,"GET_RETURN_REQUEST_DETAILS",0,u,"SAVE_PAYMENT_ID_FOR_RETURN_COD",0,o,"SAVE_RETURN_REQUEST",0,n,"UPLOAD_NEED_IMAGE",0,i])},837911,e=>{"use strict";var t,r,a,n,o,s=((t={}).CASHLESS="CASHLESS",t.CASHLESS_COD="CASHLESS_COD",t.COD="COD",t.NO_PAYMENT="NO_PAYMENT",t);(r={}).COD="COD",r.CRED="CRED",r.CREDIT_CARD="CREDIT_CARD",r.CREDIT_CARD_EMI="CREDIT_CARD_EMI",r.DEBIT_CARD="DEBIT_CARD",r.HEALTH_CREDITS="HEALTH_CREDITS",r.NET_BANKING="NET_BANKING",r.ONLINE="ONLINE",r.PAYTM_POSTPAID="PAYTM_POSTPAID",r.PAYTM_WALLET="PAYTM_WALLET",r.UPI="UPI";var i=((a={}).CASHLESS_COD="CASHLESS_COD",a.COD="COD",a.PREPAID="PREPAID",a),u=((n={}).BANK_ACCOUNT="BANK_ACCOUNT",n.HEALTH_CREDITS="HEALTH_CREDITS",n.UPI="UPI",n),d=((o={}).REFUND_FAILED="REFUND_FAILED",o.REFUND_REQUEST_NOT_RAISED="REFUND_REQUEST_NOT_RAISED",o.REFUND_REQUEST_RAISED="REFUND_REQUEST_RAISED",o.REFUND_SUCCESSFUL="REFUND_SUCCESSFUL",o);e.s(["MEDICINE_ORDER_PAYMENT_TYPE",()=>s,"REFUND_MODE",()=>i,"RETURNS_COD_PREFERENCE",()=>u,"RETURNS_REFUND_TYPE",()=>d])},412250,e=>{"use strict";var t=e.i(864286),r=e.i(462986);e.s(["apiHostBaseUri",0,()=>(0,t.isBrowser)()?r.NEXT_PUBLIC_API_HOST_NAME:r.NEXT_PUBLIC_SSR_API_HOST_NAME])},890833,e=>{"use strict";var t=e.i(650707);e.s(["cancelOrderInitiatedEvent",0,e=>{(0,t.dataLayerTracking)({event:"cancel_order_initiated",transaction_id:e})},"cancelOrderSubmitEvent",0,e=>{let{transactionId:r,reasonCode:a,reasonOtherText:n}=e,o=n?`${a}_${n}`:a;(0,t.dataLayerTracking)({event:"cancel_order_submit",transaction_id:r,reason:o})},"downLoadAPPEvent",0,()=>{(0,t.dataLayerTracking)({event:"download_app"})},"newProfileAddedEvent",0,e=>{let{gender:r,uhid:a,email:n,section:o}=e;(0,t.dataLayerTracking)({event:"new_profile_added",gender:r,uhid:a,lob:"Pharmacy",section:"Medicines",email:n})}])},820310,e=>{"use strict";var t=e.i(821726);e.s(["default",0,e=>"jpg"===e?t.UPLOAD_FILE_TYPES.JPEG:"png"===e?t.UPLOAD_FILE_TYPES.PNG:"pdf"===e?t.UPLOAD_FILE_TYPES.PDF:t.UPLOAD_FILE_TYPES.JPEG])},974907,e=>{"use strict";var t=e.i(650707);e.s(["iconClickEvent",0,e=>(0,t.dataLayerTracking)({event:"icon_click",icon_name:e,section:"medicines"})])},593476,e=>{"use strict";var t=e.i(374654),r=e.i(85034);e.s(["default",0,e=>{e.addCase(r.default.pending,e=>{e.thunkStatus.vcBookedStatus=t.ThunkResolvedStatus.pending}).addCase(r.default.fulfilled,(e,r)=>{let a=r?.payload;a?.status?e.thunkStatus.vcBookedStatus=t.ThunkResolvedStatus.fulfilled:e.thunkStatus.vcBookedStatus=t.ThunkResolvedStatus.error}).addCase(r.default.rejected,e=>{e.thunkStatus.vcBookedStatus=t.ThunkResolvedStatus.rejected})}])},750698,e=>{"use strict";var t=e.i(848643),r=e.i(593476),a=e.i(374654),n=e.i(673557);let o={thunkStatus:{vcBookedStatus:a.ThunkResolvedStatus.idle,appointmentDetailsRecieved:a.ThunkResolvedStatus.idle},appointmentDetailsVCBookedOrder:null,mwebModalCtaAction:null},s=(0,t.createSlice)({name:"ordersDetails",initialState:o,reducers:{updateAppointmentDetailsRecievedStatus(e,t){e.thunkStatus.appointmentDetailsRecieved=t?.payload},updateVCBookedStatus(e,t){e.thunkStatus.vcBookedStatus=t?.payload},updateMwebModalCtaAction(e,t){e.mwebModalCtaAction=t?.payload}},extraReducers:e=>{(0,r.default)(e),e.addCase(n.default.pending,e=>{e.thunkStatus.appointmentDetailsRecieved=a.ThunkResolvedStatus.pending}).addCase(n.default.fulfilled,(e,t)=>{let r=t?.payload;r?(e.thunkStatus.appointmentDetailsRecieved=a.ThunkResolvedStatus.fulfilled,e.appointmentDetailsVCBookedOrder=r):e.thunkStatus.appointmentDetailsRecieved=a.ThunkResolvedStatus.rejected}).addCase(n.default.rejected,e=>{e.thunkStatus.appointmentDetailsRecieved=a.ThunkResolvedStatus.rejected})}}),{updateAppointmentDetailsRecievedStatus:i,updateVCBookedStatus:u,updateMwebModalCtaAction:d}=s.actions,l=s.reducer;e.s(["default",0,l,"updateAppointmentDetailsRecievedStatus",0,i,"updateMwebModalCtaAction",0,d,"updateVCBookedStatus",0,u],750698)},673557,e=>{"use strict";var t=e.i(848643),r=e.i(216756);async function a(e){let{appointmentId:t,apolloClient:a}=e;return await a.mutate({mutation:r.GET_APPOINTMENT_DATA,variables:{appointmentId:t},fetchPolicy:"no-cache"})}let n=(0,t.createAsyncThunk)("orderDetails/appointmentDetailsForVCBookedOrders",async e=>{let t=await a(e);return t?.data?.getAppointmentData?.appointmentsHistory?.[0]});e.s(["default",0,n],673557)},85034,e=>{"use strict";var t=e.i(848643),r=e.i(216756);async function a(e){let{orderAutoId:t,patientId:a,apolloClient:n,contactNumber:o}=e;return await n.mutate({mutation:r.BOOK_VC_FOR_ONHOLD_ORDERS,variables:{orderAutoId:t,patientId:a,contactNumber:o},fetchPolicy:"no-cache"})}let n=(0,t.createAsyncThunk)("orderDetails/bookVCForOnHoldOrders",async e=>{let t=await a(e);return t?.data?.bookPharmacyConsultForOnHoldOrders});e.s(["default",0,n],85034)},953803,e=>{"use strict";var t,r,a=((t={}).BANK_ACCOUNT="BANK_ACCOUNT",t.VPA="VPA",t),n=((r={}).SHOW_ALL="SHOW_ALL",r.SHOW_BANK="SHOW_BANK",r.SHOW_UPI="SHOW_UPI",r.SHOW_REVIEW="SHOW_REVIEW",r);e.s(["REFUND_DESTINATION_ACCOUNT_TYPE",()=>a,"SCREENS",()=>n])},425205,e=>{"use strict";e.i(247167),e.s(["CALL_DOCTOR_CTA_IMAGE_URL",0,"https://images.apollo247.in/images/medicine/doc_consult_banner.webp","CALL_DOCTOR_PHONE_NUMBER",0,"18008897247","CALL_TO_ORDER_NUMBER",0,"+919355247247","CHECKOUT_DISABLE_POPUP_DURATION",0,1e4,"CIRCLE_PLAN_ID",0,"CIRCLEPlan","MEDICINE_SEARCH_DEBOUNCE_RATE",0,500,"PHARMACY_PRESCRIPTION_HELPLINE",0,"08045588400","REFUND_STATUS_VALUES",0,{success:"REFUND SUCCESSFUL",failed:"REFUND FAILED",processed:"REFUND PROCESSED"},"RETURN_POLICY",0,"Return Policy","RETURN_REFUNDS_POLICY",0,"Return & Refunds Policy","SELECT_RETURNING_REASON",0,"Select reason for return/refund","WHATSAPP_TO_ORDER_LINK",0,"https://api.whatsapp.com/send/?phone=919355247247&text=Order_medicines_mweb_vernac","getLanguageInfo",0,[{languageCode:"en",languageName:"English"},{languageCode:"hi",languageName:"हिंदी"},{languageCode:"ta",languageName:"தமிழ்"}],"pdpOrderCtaType",0,"whatsapp","returns",0,{prepaidSource:"Prepaid Source",bankAccount:"Bank Account (NEFT)",upi:"UPI",healthCredits:"Health Credits",reviewReturnItemsText:"The below are the return/refund request details. If you wish to change any details, please click on the back button above."}])}]);

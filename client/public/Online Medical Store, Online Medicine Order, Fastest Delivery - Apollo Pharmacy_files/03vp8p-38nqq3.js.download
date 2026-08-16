@@ -1,0 +1,1909 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,803097,e=>{"use strict";var t=e.i(702807);let a=t.default`
+  query fetchCartV2($patientId: UUID!, $reminderId: UUID) {
+    fetchCartV2(patientId: $patientId, reminderId: $reminderId) {
+      message {
+        showOnlyAtCart
+        value
+        feedback
+      }
+      nonCartTat {
+        errorMessage
+        tatHours
+        tatHoursSlot
+      }
+      data {
+        address {
+          city
+          coordinate {
+            latitude
+            longitude
+          }
+          id
+          state
+          zipcode
+        }
+        amount {
+          standardPackingCharge
+          packingFee
+          hcBreakdown {
+            availableNow
+            balance
+            message
+            wallet
+            effectiveAmount
+          }
+          platformFee {
+            message
+            discountedValue
+            value
+          }
+          cartSavings
+          cartTotal
+          circleBenefitMessage
+          circleCashBack
+          circleSavings {
+            membershipCashBack
+            circleDelivery
+            title {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+            message {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+            homeMessage {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+          }
+          couponCashBack
+          couponSavings
+          deliveryCharges
+          estimatedAmount
+          estimatedAmountPreCoupon
+          freeDeliveryAmount
+          isDeliveryFree
+          standardDeliveryCharge
+          totalCashBack
+          effectiveAmount
+          bankOfferCashBack
+          bankOfferCoupon
+          bankOfferDiscount
+          bankOfferId
+          isBankOfferApplied
+          usedHC
+          availableHC
+          mov
+        }
+        cartBreakdown {
+          amountBreakups {
+            text
+            imageUrl
+            style
+            breakups {
+              name {
+                structure {
+                  text
+                  imageUrl
+                  key
+                  style
+                }
+                tooltip
+                meta {
+                  click_to_open
+                }
+              }
+              value {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  style
+                  imageUrl
+                  key
+                }
+                tooltip
+              }
+            }
+          }
+          paymentBreakups {
+            text
+            imageUrl
+            style
+            breakups {
+              name {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  style
+                  text
+                  imageUrl
+                  key
+                }
+                tooltip
+              }
+              value {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  style
+                  text
+                  imageUrl
+                  key
+                }
+                tooltip
+              }
+            }
+          }
+        }
+        couponDetails {
+          bankOffer
+          circleBenefits
+          coupon
+          message
+          textOffer
+          valid
+        }
+        isHCPreferred
+        medicineOrderCartLineItems {
+          corporateStatus
+          cartSource
+          cashback
+          classifier_1
+          classifier_2
+          classifier_3
+          isVCRestricted
+          couponDiscountPrice
+          freeProduct
+          isCouponApplicable
+          isExpress
+          isInStock
+          isPrescriptionRequired
+          isShippable
+          is_generic
+          itemCouponCashback
+          magentoId
+          magentoStatus
+          maxOrderQty
+          mou
+          name
+          packForm
+          packSize
+          price
+          quantity
+          reminderDuration
+          sellOnline
+          moq
+          sellingPrice
+          setReminder
+          shipmentNo
+          sku
+          storeType
+          subcategory
+          tat
+          tatCity
+          tatDuration
+          thumbnail
+          typeId
+          urlKey
+          isVariantAvailable
+          multiVariants {
+            attributes {
+              label
+              values {
+                code
+                label
+              }
+            }
+            products {
+              discount
+              exists
+              express
+              id
+              image
+              instant
+              is_in_stock
+              is_prescription_required
+              manufacturer
+              mrp
+              name
+              price
+              redirectUrl
+              sell_online
+              sellingPrice
+              sku
+              small_image
+              special_price
+              tag {
+                name
+                value
+              }
+              tat
+              tatHours
+              tatInText
+              thumbnail
+              type_id
+              unitPrice
+              unit_of_measurement
+              url_key
+              variant_key
+            }
+          }
+          isReplacementProductsAvailable
+          replacementProducts {
+            MaxOrderQty
+            boost_score
+            dc_availability
+            description
+            discount
+            express
+            image
+            instant
+            is_express
+            is_in_contract
+            is_in_stock
+            is_prescription_required
+            manufacturer
+            moq
+            mou
+            name
+            price
+            sell_online
+            sellingPrice
+            sku
+            small_image
+            special_price
+            subcategory
+            tag {
+              name
+              value
+            }
+            tat
+            tatHours
+            tatInText
+            thumbnail
+            type_id
+            unitPrice
+            url_key
+          }
+          isSubstituteAvailable
+          susbtitutes {
+            MaxOrderQty
+            boost_score
+            dc_availability
+            description
+            discount
+            express
+            image
+            instant
+            is_express
+            is_in_contract
+            is_in_stock
+            is_prescription_required
+            manufacturer
+            moq
+            mou
+            name
+            price
+            sell_online
+            sellingPrice
+            sku
+            small_image
+            special_price
+            subcategory
+            tag {
+              name
+              value
+            }
+            tat
+            tatHours
+            tatInText
+            thumbnail
+            type_id
+            unitPrice
+            url_key
+          }
+        }
+        noOfShipments
+        patientId
+        prescriptionDetails {
+          addedBy
+          appointmentId
+          documentId
+          hashedDocumentId
+          fileUrl
+          meta {
+            createdAt
+            doctorName
+            fileName
+            fileType
+            medicineNames
+            medicineSku
+            patientName
+          }
+          prismFileId
+          uhid
+        }
+        proceedNudge {
+          button1 {
+            action
+            text
+          }
+          button2 {
+            action
+            text
+          }
+          corporateIconToShow
+          description
+          disclaimer
+          heading
+        }
+        reminderDetails {
+          isFeatureEnabled
+          isReminderSet
+          isUserDenied
+        }
+        subscriptionDetails {
+          circleAddedToCart
+          planPurchaseDetails {
+            currentSellingPrice
+            durationInMonth
+            planAmount
+            planId
+            subPlanId
+            validDuration
+          }
+          subscriptionApplied
+          userSubscriptionId
+        }
+        outOfStockItemsList
+        coupon {
+          enabled
+          message
+        }
+        circle {
+          enabled
+        }
+        healthCredits {
+          enabled
+          checkboxEnable
+        }
+        corporateProgram {
+          available_hc
+          enabled
+          hc_qualified
+          rejectionReason
+          message
+          unlimited
+          availableCreditsMessage
+          copay {
+            infoCard {
+              description
+            }
+            value
+          }
+        }
+        user {
+          isCorporateProgram
+          partnerId
+        }
+        nudge {
+          bulletedList
+          button1Text
+          button2Text
+          heading
+          message
+          note
+        }
+        nudges {
+          bulletedList
+          button1Text
+          button2Text
+          buttons {
+            action
+            text
+            precedence
+          }
+          context
+          heading
+          message
+          note
+        }
+        contactNumber
+        showVCRestrictedPopUp
+      }
+    }
+  }
+`,i=t.default`
+  mutation saveCartV2($cartInputDataV2: CartInputDataV2!) {
+    saveCartV2(cartInputV2: $cartInputDataV2) {
+      message {
+        showOnlyAtCart
+        value
+        feedback
+      }
+      nonCartTat {
+        errorMessage
+        tatHours
+        tatHoursSlot
+      }
+      data {
+        showVCRestrictedPopUp
+        address {
+          city
+          coordinate {
+            latitude
+            longitude
+          }
+          id
+          state
+          zipcode
+        }
+        amount {
+          standardPackingCharge
+          packingFee
+          hcBreakdown {
+            availableNow
+            balance
+            message
+            wallet
+            effectiveAmount
+          }
+          platformFee {
+            message
+            discountedValue
+            value
+          }
+          cartSavings
+          cartTotal
+          circleBenefitMessage
+          circleCashBack
+          circleSavings {
+            membershipCashBack
+            circleDelivery
+            title {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+            message {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+            homeMessage {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+          }
+          couponCashBack
+          couponSavings
+          deliveryCharges
+          estimatedAmount
+          estimatedAmountPreCoupon
+          freeDeliveryAmount
+          isDeliveryFree
+          standardDeliveryCharge
+          totalCashBack
+          effectiveAmount
+          bankOfferCashBack
+          bankOfferCoupon
+          bankOfferDiscount
+          bankOfferId
+          isBankOfferApplied
+          usedHC
+          availableHC
+          mov
+        }
+        cartBreakdown {
+          amountBreakups {
+            text
+            style
+            breakups {
+              name {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  imageUrl
+                  key
+                  style
+                }
+                tooltip
+              }
+              value {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  style
+                  imageUrl
+                  key
+                }
+                tooltip
+              }
+            }
+          }
+          paymentBreakups {
+            text
+            style
+            breakups {
+              name {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  imageUrl
+                  key
+                  style
+                }
+                tooltip
+              }
+              value {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  style
+                  imageUrl
+                  key
+                }
+                tooltip
+              }
+            }
+          }
+        }
+        couponDetails {
+          bankOffer
+          circleBenefits
+          coupon
+          message
+          textOffer
+          valid
+        }
+        isHCPreferred
+        medicineOrderCartLineItems {
+          corporateStatus
+          cartSource
+          cashback
+          classifier_1
+          classifier_2
+          classifier_3
+          couponDiscountPrice
+          freeProduct
+          isCouponApplicable
+          isExpress
+          isInStock
+          isPrescriptionRequired
+          isVCRestricted
+          isShippable
+          is_generic
+          itemCouponCashback
+          magentoId
+          magentoStatus
+          maxOrderQty
+          mou
+          name
+          packForm
+          packSize
+          price
+          quantity
+          reminderDuration
+          sellOnline
+          sellingPrice
+          setReminder
+          shipmentNo
+          sku
+          storeType
+          subcategory
+          tat
+          tatCity
+          tatDuration
+          thumbnail
+          moq
+          typeId
+          urlKey
+          isVariantAvailable
+          multiVariants {
+            attributes {
+              label
+              values {
+                code
+                label
+              }
+            }
+            products {
+              discount
+              exists
+              express
+              id
+              image
+              instant
+              is_in_stock
+              is_prescription_required
+              manufacturer
+              mrp
+              name
+              price
+              redirectUrl
+              sell_online
+              sellingPrice
+              sku
+              small_image
+              special_price
+              tag {
+                name
+                value
+              }
+              tat
+              tatHours
+              tatInText
+              thumbnail
+              type_id
+              unitPrice
+              unit_of_measurement
+              url_key
+              variant_key
+            }
+          }
+          isReplacementProductsAvailable
+          replacementProducts {
+            MaxOrderQty
+            boost_score
+            dc_availability
+            description
+            discount
+            express
+            image
+            instant
+            is_express
+            is_in_contract
+            is_in_stock
+            is_prescription_required
+            manufacturer
+            moq
+            mou
+            name
+            price
+            sell_online
+            sellingPrice
+            sku
+            small_image
+            special_price
+            subcategory
+            tag {
+              name
+              value
+            }
+            tat
+            tatHours
+            tatInText
+            thumbnail
+            type_id
+            unitPrice
+            url_key
+          }
+          isSubstituteAvailable
+          susbtitutes {
+            MaxOrderQty
+            boost_score
+            dc_availability
+            description
+            discount
+            express
+            image
+            instant
+            is_express
+            is_in_contract
+            is_in_stock
+            is_prescription_required
+            manufacturer
+            moq
+            mou
+            name
+            price
+            sell_online
+            sellingPrice
+            sku
+            small_image
+            special_price
+            subcategory
+            tag {
+              name
+              value
+            }
+            tat
+            tatHours
+            tatInText
+            thumbnail
+            type_id
+            unitPrice
+            url_key
+          }
+        }
+        noOfShipments
+        patientId
+        prescriptionDetails {
+          addedBy
+          appointmentId
+          documentId
+          hashedDocumentId
+          fileUrl
+          meta {
+            createdAt
+            doctorName
+            fileName
+            fileType
+            medicineNames
+            medicineSku
+            patientName
+          }
+          prismFileId
+          uhid
+        }
+        proceedNudge {
+          button1 {
+            action
+            text
+          }
+          button2 {
+            action
+            text
+          }
+          corporateIconToShow
+          description
+          disclaimer
+          heading
+        }
+        reminderDetails {
+          isFeatureEnabled
+          isReminderSet
+          isUserDenied
+        }
+        subscriptionDetails {
+          circleAddedToCart
+          planPurchaseDetails {
+            currentSellingPrice
+            durationInMonth
+            planAmount
+            planId
+            subPlanId
+            validDuration
+          }
+          subscriptionApplied
+          userSubscriptionId
+        }
+        outOfStockItemsList
+        coupon {
+          enabled
+          message
+        }
+        circle {
+          enabled
+        }
+        healthCredits {
+          enabled
+          checkboxEnable
+        }
+        corporateProgram {
+          available_hc
+          enabled
+          hc_qualified
+          rejectionReason
+          message
+          unlimited
+          availableCreditsMessage
+          copay {
+            infoCard {
+              description
+            }
+            value
+          }
+        }
+        user {
+          isCorporateProgram
+          partnerId
+        }
+        nudge {
+          bulletedList
+          button1Text
+          button2Text
+          heading
+          message
+          note
+        }
+        nudges {
+          bulletedList
+          button1Text
+          button2Text
+          buttons {
+            action
+            text
+            precedence
+          }
+          context
+          heading
+          message
+          note
+        }
+        contactNumber
+      }
+    }
+  }
+`;t.default`
+  query reviewCartV2($optionType: DeliveryOptions, $patientId: UUID!) {
+    reviewCartV2(optionType: $optionType, patientId: $patientId) {
+      message {
+        showOnlyAtCart
+        value
+        feedback
+      }
+      nonCartTat {
+        errorMessage
+        tatHours
+        tatHoursSlot
+      }
+      data {
+        showVCRestrictedPopUp
+        address {
+          city
+          coordinate {
+            latitude
+            longitude
+          }
+          id
+          state
+          zipcode
+        }
+        amount {
+          standardPackingCharge
+          packingFee
+          hcBreakdown {
+            availableNow
+            balance
+            message
+            wallet
+            effectiveAmount
+          }
+          platformFee {
+            message
+            discountedValue
+            value
+          }
+          cartSavings
+          cartTotal
+          circleBenefitMessage
+          circleCashBack
+          circleSavings {
+            membershipCashBack
+            circleDelivery
+            title {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+            message {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+            homeMessage {
+              template
+              attribute {
+                amount
+                symbol
+              }
+            }
+          }
+          couponCashBack
+          couponSavings
+          deliveryCharges
+          estimatedAmount
+          estimatedAmountPreCoupon
+          freeDeliveryAmount
+          isDeliveryFree
+          standardDeliveryCharge
+          totalCashBack
+          effectiveAmount
+          bankOfferCashBack
+          bankOfferCoupon
+          bankOfferDiscount
+          bankOfferId
+          isBankOfferApplied
+          usedHC
+          availableHC
+          mov
+        }
+        cartBreakdown {
+          amountBreakups {
+            text
+            style
+            breakups {
+              name {
+                structure {
+                  text
+                  style
+                }
+                tooltip
+                meta {
+                  click_to_open
+                }
+              }
+              value {
+                tooltip
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  style
+                }
+              }
+            }
+          }
+          paymentBreakups {
+            text
+            style
+            breakups {
+              name {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  style
+                  text
+                }
+                tooltip
+              }
+              value {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  style
+                  text
+                }
+                tooltip
+              }
+            }
+          }
+        }
+        couponDetails {
+          bankOffer
+          circleBenefits
+          coupon
+          message
+          textOffer
+          valid
+        }
+        isHCPreferred
+        medicineOrderCartLineItems {
+          corporateStatus
+          cartSource
+          cashback
+          classifier_1
+          classifier_2
+          classifier_3
+          couponDiscountPrice
+          isVCRestricted
+          freeProduct
+          isCouponApplicable
+          isExpress
+          isInStock
+          isPrescriptionRequired
+          isShippable
+          is_generic
+          itemCouponCashback
+          magentoId
+          magentoStatus
+          maxOrderQty
+          mou
+          name
+          packForm
+          packSize
+          price
+          quantity
+          reminderDuration
+          sellOnline
+          sellingPrice
+          setReminder
+          shipmentNo
+          sku
+          storeType
+          subcategory
+          tat
+          tatCity
+          tatDuration
+          thumbnail
+          moq
+          typeId
+          urlKey
+          isVariantAvailable
+          multiVariants {
+            attributes {
+              label
+              values {
+                code
+                label
+              }
+            }
+            products {
+              discount
+              exists
+              express
+              id
+              image
+              instant
+              is_in_stock
+              is_prescription_required
+              manufacturer
+              mrp
+              name
+              price
+              redirectUrl
+              sell_online
+              sellingPrice
+              sku
+              small_image
+              special_price
+              tag {
+                name
+                value
+              }
+              tat
+              tatHours
+              tatInText
+              thumbnail
+              type_id
+              unitPrice
+              unit_of_measurement
+              url_key
+              variant_key
+            }
+          }
+          isReplacementProductsAvailable
+          replacementProducts {
+            MaxOrderQty
+            boost_score
+            dc_availability
+            description
+            discount
+            express
+            image
+            instant
+            is_express
+            is_in_contract
+            is_in_stock
+            is_prescription_required
+            manufacturer
+            moq
+            mou
+            name
+            price
+            sell_online
+            sellingPrice
+            sku
+            small_image
+            special_price
+            subcategory
+            tag {
+              name
+              value
+            }
+            tat
+            tatHours
+            tatInText
+            thumbnail
+            type_id
+            unitPrice
+            url_key
+          }
+          isSubstituteAvailable
+          susbtitutes {
+            MaxOrderQty
+            boost_score
+            dc_availability
+            description
+            discount
+            express
+            image
+            instant
+            is_express
+            is_in_contract
+            is_in_stock
+            is_prescription_required
+            manufacturer
+            moq
+            mou
+            name
+            price
+            sell_online
+            sellingPrice
+            sku
+            small_image
+            special_price
+            subcategory
+            tag {
+              name
+              value
+            }
+            tat
+            tatHours
+            tatInText
+            thumbnail
+            type_id
+            unitPrice
+            url_key
+          }
+        }
+        noOfShipments
+        patientId
+        prescriptionDetails {
+          addedBy
+          appointmentId
+          documentId
+          hashedDocumentId
+          fileUrl
+          meta {
+            createdAt
+            doctorName
+            fileName
+            fileType
+            medicineNames
+            medicineSku
+            patientName
+          }
+          prismFileId
+          uhid
+        }
+        proceedNudge {
+          button1 {
+            action
+            text
+          }
+          button2 {
+            action
+            text
+          }
+          corporateIconToShow
+          description
+          disclaimer
+          heading
+        }
+        reminderDetails {
+          isFeatureEnabled
+          isReminderSet
+          isUserDenied
+        }
+        subscriptionDetails {
+          circleAddedToCart
+          planPurchaseDetails {
+            currentSellingPrice
+            durationInMonth
+            planAmount
+            planId
+            subPlanId
+            validDuration
+          }
+          subscriptionApplied
+          userSubscriptionId
+        }
+        outOfStockItemsList
+        coupon {
+          enabled
+          message
+        }
+        circle {
+          enabled
+        }
+        healthCredits {
+          enabled
+          checkboxEnable
+        }
+        corporateProgram {
+          available_hc
+          enabled
+          hc_qualified
+          rejectionReason
+          message
+          unlimited
+          availableCreditsMessage
+          copay {
+            infoCard {
+              description
+            }
+            value
+          }
+        }
+        user {
+          isCorporateProgram
+          partnerId
+        }
+        nudge {
+          bulletedList
+          button1Text
+          button2Text
+          heading
+          message
+          note
+        }
+        nudges {
+          bulletedList
+          button1Text
+          button2Text
+          buttons {
+            action
+            text
+            precedence
+          }
+          context
+          heading
+          message
+          note
+        }
+        contactNumber
+      }
+    }
+  }
+`;let r=t.default`
+  mutation saveMedicineOrderV4($medicineOrderInput: SaveMedicineOrderV4Input) {
+    saveMedicineOrderV4(medicineOrderInput: $medicineOrderInput) {
+      status
+      refreshCart
+      message {
+        value
+      }
+      data {
+        transactionId
+        orders {
+          id
+          orderAutoId
+          estimatedAmount
+        }
+        substitutionAttrs {
+          isSubstitution
+          substitutionTime
+          substitutionMessage
+        }
+        paymentAttrs {
+          isCodEligible
+          codMessage
+          paymentOrderId
+        }
+      }
+    }
+  }
+`,s=t.default`
+  query ($cartId: String!, $coordinates: CoordinateInput) {
+    getGuestCartDetails(cartId: $cartId, coordinates: $coordinates) {
+      message {
+        showOnlyAtCart
+        value
+        feedback
+      }
+      address {
+        city
+        coordinate {
+          latitude
+          longitude
+        }
+        id
+        state
+        zipcode
+      }
+      additionalFields {
+        cartBreakdown {
+          amountBreakups {
+            text
+            style
+            breakups {
+              name {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  imageUrl
+                  key
+                  style
+                }
+                tooltip
+              }
+              value {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  style
+                  imageUrl
+                  key
+                }
+                tooltip
+              }
+            }
+          }
+          paymentBreakups {
+            text
+            style
+            breakups {
+              name {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  style
+                  imageUrl
+                  key
+                }
+                tooltip
+              }
+              value {
+                meta {
+                  click_to_open
+                }
+                structure {
+                  text
+                  style
+                  imageUrl
+                  key
+                }
+                tooltip
+              }
+            }
+          }
+        }
+      }
+      prescriptionDetails {
+        addedBy
+        appointmentId
+        documentId
+        hashedDocumentId
+        fileUrl
+        meta {
+          createdAt
+          doctorName
+          fileName
+          fileType
+          medicineNames
+          medicineSku
+          patientName
+        }
+        prismFileId
+        uhid
+      }
+      transactAction {
+        type
+        data {
+          ctaInlineMessage
+          nextAction {
+            action {
+              type
+              params {
+                removeItems
+              }
+            }
+            value {
+              label
+              popupDetails {
+                data {
+                  actions {
+                    action {
+                      type
+                      params {
+                        removeItems
+                      }
+                    }
+                    value {
+                      label
+                      popupDetails {
+                        data {
+                          actions {
+                            action {
+                              type
+                              params {
+                                removeItems
+                              }
+                            }
+                            value {
+                              label
+                            }
+                          }
+                          disclaimer
+                          heading
+                          description
+                        }
+                        type
+                      }
+                    }
+                  }
+                  disclaimer
+                  heading
+                  description
+                }
+                type
+              }
+            }
+          }
+          priceDetails {
+            value {
+              label
+              currencyPrice {
+                value
+                currency
+                priceType
+              }
+            }
+            action {
+              type
+            }
+          }
+        }
+      }
+      amountBreakdown {
+        totalAmount
+        toPay
+      }
+      savingsBreakdown {
+        savings
+        cashback
+        breakups {
+          text
+          style
+          breakups {
+            name {
+              meta {
+                click_to_open
+              }
+              structure {
+                text
+                style
+              }
+              tooltip
+            }
+            value {
+              meta {
+                click_to_open
+              }
+              structure {
+                text
+                style
+              }
+              tooltip
+            }
+          }
+        }
+      }
+      groupCards {
+        precedence
+        shipmentDetails {
+          type
+          tatInText
+          deliveryMessage
+          tat
+          isShippable
+          shipmentNo
+        }
+        products {
+          precedence
+          options {
+            kind
+            isAlternative
+            isMultiVariants
+            isSubstitute
+            isReplacementProducts
+            products {
+              id
+              sku
+              name
+              variant
+              qtyInCart
+              packInformation
+              isPrescriptionRequired
+              isVCRestricted
+              thumbnail
+              moq
+              manufacturer
+              isSampling
+              mrp
+              price
+              discountInPercent
+              type
+              tag {
+                name
+                value
+              }
+            }
+            multiVariantsAttributes {
+              values {
+                code
+                label
+              }
+              label
+            }
+          }
+          flags {
+            freebie
+          }
+          sku {
+            id
+            name
+            variant
+            sku
+            qtyInCart
+            packInformation
+            isPrescriptionRequired
+            isVCRestricted
+            thumbnail
+            moq
+            manufacturer
+            isSampling
+            type
+            subcategory
+            urlKey
+          }
+          bmsmDetails {
+            tiers {
+              precedence
+              quantity
+              discountInPercent
+            }
+            message
+          }
+          discountInfo {
+            mrp
+            price
+            discountInPercent
+            circleCashBackDetails
+          }
+          qtyDropdown {
+            quantities {
+              qty
+              isSelected
+              bmsmDiscount
+              isNudgeQty
+              isNudgeToBeShown
+              tag {
+                name
+                value
+              }
+            }
+            nudge {
+              context
+              heading
+              message
+              disclaimer
+              bulletedList
+              buttons {
+                text
+                action
+                precedence
+              }
+            }
+          }
+          corporate {
+            status
+            creditsQualified
+            tooltip
+          }
+          tag {
+            name
+            text
+            tooltip
+          }
+        }
+      }
+    }
+  }
+`;t.default`
+  query ($patientId: String!, $coordinates: CoordinateInput) {
+    getPharmaCartDetails(patientId: $patientId, coordinates: $coordinates) {
+      coupon {
+        message
+        widgetMessage
+        enabled
+        valid
+        cashback
+        bankOffer
+        discount
+        cashback
+        coupon
+        circleBenefits
+      }
+      transactAction {
+        type
+        data {
+          ctaInlineMessage
+          nextAction {
+            action {
+              type
+              params {
+                removeItems
+              }
+            }
+            value {
+              label
+              popupDetails {
+                data {
+                  actions {
+                    action {
+                      type
+                      params {
+                        removeItems
+                      }
+                    }
+                    value {
+                      label
+                      popupDetails {
+                        data {
+                          actions {
+                            action {
+                              type
+                              params {
+                                removeItems
+                              }
+                            }
+                            value {
+                              label
+                            }
+                          }
+                          disclaimer
+                          heading
+                          description
+                        }
+                        type
+                      }
+                    }
+                  }
+                  disclaimer
+                  heading
+                  description
+                }
+                type
+              }
+            }
+          }
+          priceDetails {
+            value {
+              label
+              currencyPrice {
+                value
+                currency
+                priceType
+              }
+            }
+            action {
+              type
+            }
+          }
+        }
+      }
+      amountBreakdown {
+        totalAmount
+        toPay
+      }
+      savingsBreakdown {
+        savings
+        cashback
+        breakups {
+          text
+          style
+          breakups {
+            name {
+              meta {
+                click_to_open
+              }
+              structure {
+                text
+                style
+              }
+              tooltip
+            }
+            value {
+              meta {
+                click_to_open
+              }
+              structure {
+                text
+                style
+              }
+              tooltip
+            }
+          }
+        }
+      }
+      groupCards {
+        precedence
+        shipmentDetails {
+          type
+          tatInText
+          deliveryMessage
+          tat
+          isShippable
+          shipmentNo
+        }
+        products {
+          precedence
+          options {
+            kind
+            isAlternative
+            isMultiVariants
+            isSubstitute
+            isReplacementProducts
+            products {
+              id
+              sku
+              name
+              variant
+              qtyInCart
+              packInformation
+              isPrescriptionRequired
+              isVCRestricted
+              thumbnail
+              moq
+              manufacturer
+              isSampling
+              mrp
+              price
+              discountInPercent
+              type
+              tag {
+                name
+                value
+              }
+            }
+            multiVariantsAttributes {
+              values {
+                code
+                label
+              }
+              label
+            }
+          }
+          flags {
+            freebie
+          }
+          sku {
+            id
+            name
+            variant
+            sku
+            qtyInCart
+            packInformation
+            isPrescriptionRequired
+            isVCRestricted
+            thumbnail
+            moq
+            manufacturer
+            isSampling
+            type
+            subcategory
+            urlKey
+          }
+          bmsmDetails {
+            tiers {
+              precedence
+              quantity
+              discountInPercent
+            }
+            message
+          }
+          discountInfo {
+            mrp
+            price
+            discountInPercent
+            circleCashBackDetails
+          }
+          qtyDropdown {
+            quantities {
+              qty
+              isSelected
+              bmsmDiscount
+              isNudgeQty
+              isNudgeToBeShown
+              tag {
+                name
+                value
+              }
+            }
+            nudge {
+              context
+              heading
+              message
+              disclaimer
+              bulletedList
+              buttons {
+                text
+                action
+                precedence
+              }
+            }
+          }
+          corporate {
+            status
+            creditsQualified
+            tooltip
+          }
+          tag {
+            name
+            text
+            tooltip
+          }
+        }
+      }
+    }
+  }
+`,t.default`
+  query getPharmaCartPossibleOptions(
+    $pharmaCartPossibleOptionInput: PharmaCartPossibleOptionInput!
+  ) {
+    getPharmaCartPossibleOptions(
+      pharmaCartPossibleOptionInput: $pharmaCartPossibleOptionInput
+    ) {
+      isAlternative
+      isMultiVariants
+      isReplacementProducts
+      isSubstitute
+      kind
+      multiVariantsAttributes {
+        label
+        values {
+          code
+          label
+        }
+      }
+      products {
+        discountInPercent
+        id
+        isPrescriptionRequired
+        isSampling
+        isVCRestricted
+        manufacturer
+        moq
+        mrp
+        name
+        packInformation
+        price
+        qtyInCart
+        sku
+        subcategory
+        tag {
+          name
+          value
+        }
+        thumbnail
+        type
+        variant
+      }
+    }
+  }
+`,e.s(["FETCH_CART_V2",0,a,"GET_GUEST_CART_DETAILS",0,s,"SAVE_CART_V2",0,i,"SAVE_MEDICINE_ORDER_V4",0,r])},134171,e=>{"use strict";let t=(0,e.i(848643).createDraftSafeSelector)(e=>e?.cart,e=>e?.userActionPayload);e.s(["default",0,t])},243385,e=>{"use strict";let t=(0,e.i(848643).createDraftSafeSelector)(e=>e?.cart,e=>e?.whatsAppReminderSettings);e.s(["default",0,t])},26502,e=>{"use strict";var t=e.i(864286),a=e.i(742759),i=e.i(851498),r=e.i(122290);let s=async({dispatch:e,authToken:s})=>{if((0,t.isBrowser)()){let t=localStorage.getItem("mobile_num")||"";if(t){let n=await (0,a.default)({url:`${i.NEXT_PUBLIC_CART_SERVICE_BASE_URL}/public/user-cart`,method:"GET",headers:{mobilenumber:t},token:s});n?.patientId&&e((0,r.updateTotalCartItemCount)(n?.totalItemsCount||0))}}};e.s(["default",0,s])},504091,e=>{"use strict";var t=e.i(851498),a=e.i(573586),i=e.i(422233),r=e.i(864286);let s=async e=>{let s=`${t.NEXT_PUBLIC_CART_SERVICE_BASE_URL}/public/guest/save-cart`;if(!e.id){let t=`temp-${(0,i.v4)()}`;(0,r.isBrowser)()&&localStorage?.setItem("guestCartId",t),e.id=t}try{return await (0,a.default)(s,"POST",{cartInputV2:e},"application/json",!0)}catch(e){throw e}};e.s(["guestSaveCartApi",0,s])},895162,409815,e=>{"use strict";var t=e.i(390189),a=e.i(301794),i=e.i(149904),r=e.i(821726),s=e.i(155487),n=e.i(426331),l=e.i(597512);let o=(e,t)=>{let{prescriptionsForOrder:a,physicalPrescriptions:i,ePrescriptions:o}=((e=[])=>{let t=[];e?.length&&(t=e.map(({appointmentId:e="",meta:t=null,prismFileId:a,fileUrl:i="",addedBy:r,documentId:s})=>({prismFileId:a,documentId:s,appointmentId:e,fileUrl:i,date:t?.createdAt,prescriptionAddedBy:r,doctorName:t?.doctorName,medicineNames:t?.medicineNames||[],medicineSku:t?.medicineSku||[],forPatient:t?.patientName,fileName:t?.fileName,fileType:t?.fileType,baseFormat:""})));let a=t.filter(e=>!(0,l.default)(e)).map(({baseFormat:e="",fileUrl:t="",fileName:a="",fileType:i=""})=>({baseFormat:e,fileName:a,fileType:i,fileUrl:t})),i=t.filter(l.default).map(({date:e="",doctorName:t="",forPatient:a="",medicineNames:i=[],medicineSku:r=[],prismFileId:s="",documentId:n="",appointmentId:l="",fileUrl:o="",prescriptionAddedBy:c=""})=>({fileUrl:o,date:e,doctorName:t,forPatient:a,medicineNames:i,medicineSku:r,prismFileId:s,appointmentId:l,prescriptionAddedBy:c,documentId:n}));return{prescriptionsForOrder:t,physicalPrescriptions:a,ePrescriptions:i}})((e??[])?.filter(e=>e.addedBy!==r.PRESCRIPTION_ADDED_BY.AUTO_UPLOAD));(0,s.batch)(()=>{t((0,n.setServerPrescriptions)(a)),t((0,n.setPrescriptions)(i)),t((0,n.setEPrescriptionData)(o))})};e.s(["default",0,o],409815);var c=e.i(833909),u=e.i(122290),d=e.i(185716),p=e.i(188130),m=e.i(810430),b=e.i(357377),g=e.i(923425),y=e.i(394922);let C=async(e,r,s,n,l,C,f)=>{let h=e?.message?.value||"",k=l===p.clientRoutes.medicinesCart(),_=e?.message?.showOnlyAtCart;h?.length&&((_&&k||!_)&&C((0,u.setServerCartErrorMessage)(h)),(0,y.default)(()=>{(0,t.default)("Cart Error event",{Action:h,...(e=>{let{cartItemsObj:t}=(0,i.getCTCartItemDetails)(e);return{"Cart Items":t,"Items In Cart":f}})(e?.data?.medicineOrderCartLineItems),"Rx required":e?.data?.medicineOrderCartLineItems?.some(({isPrescriptionRequired:e})=>e),"Order value":e?.data?.amount?.cartTotal,"Delivery Charges":e?.data?.amount?.deliveryCharges,"Coupon code":e?.data?.couponDetails,"Circle benefits applied":e?.data?.subscriptionDetails?.subscriptionApplied?"Yes":"No",Discount:e?.data?.amount?.couponSavings,"Circle cashback":e?.data?.amount?.circleSavings?.membershipCashBack,split:e?.data?.medicineOrderCartLineItems?.length,...(e=>{let{City:t,Pincode:a}=(0,i.getCTLocationDetails)(e);return{City:t,Pincode:a}})(r)})}),C((0,a.updateAddressLoading)(!1))),e?.nonCartTat&&C((0,u.setNonCartTat)(e?.nonCartTat));let v=e?.data;if(!v)return;let{patientId:I,address:P,prescriptionDetails:S,couponDetails:A,subscriptionDetails:D,medicineOrderCartLineItems:x,noOfShipments:T,amount:O,isHCPreferred:R,outOfStockItemsList:B,coupon:N,circle:q,healthCredits:w,corporateProgram:U,user:M,nudges:V,contactNumber:E,showVCRestrictedPopUp:L,cartBreakdown:H,proceedNudge:F,reminderDetails:$}=v||{},Q={pincode:P?.zipcode||"",lat:Number(P?.coordinate?.latitude||0),lng:Number(P?.coordinate?.longitude||0)};await (0,b.yieldToMain)();var G=(0,d.getPatientCartItemsFromServer)(x);try{(0,g.replaceCartItems)(G,C),C((0,u.setRemovedSKUs)([]))}catch(e){}o(S,C),((e,t=1)=>{let a=(0,d.getCartShipments)(e,t);C((0,u.setCartShipments)(a))})(x,T),C((0,m.updateCurrentPatientId)(I)),C((0,u.setValidCouponResponse)(A||null)),C((0,c.setSubscriptionCartDetails)(D||null)),C((0,a.updateCurrentAddressId)(P?.id||"")),C((0,a.updateIsAddressUpdated)(!1)),C((0,u.setWhatsAppReminderSettings)({...s,whatsAppReminderStatus:!!$?.isReminderSet,enableWhatsAppReminder:!!$?.isFeatureEnabled,whatsAppRemindersDeny:!!$?.isUserDenied})),C((0,u.setCartSummaryBreakdown)(H)),C((0,u.setCustomerCartPreferences)({...n})),C((0,u.setMedicineAddress)(P?.city||"")),Q.pincode&&C((0,a.updateSpecifiedLocation)({city:P?.city||"",country:"",latitude:Q.lat,longitude:Q.lng,pincode:Q.pincode,state:P?.state||""})),await (0,b.yieldToMain)(),C((0,u.setCorporateCartNudge)(F)),C((0,u.setIsHCPreferred)(R)),C((0,u.setUsedHC)(O?.usedHC||0)),C((0,u.setAvailableHC)(O?.availableHC||0)),C((0,u.setCartFeedback)(e?.message?.feedback)),C((0,u.setHCBreakdown)(O?.hcBreakdown||null)),C((0,u.setCouponEnabledState)(N)),C((0,u.setCircleEnabledState)(q)),C((0,u.setHealthCreditsEnabledState)(w)),C((0,u.setCorporateProgramDetails)(U)),C((0,u.setCorporateUserDetails)(M)),C((0,u.setNudgesDetails)(V)),C((0,u.setCartContactNumber)(E)),C((0,u.setShowVCRestrictedPopUp)(L)),C((0,u.setCartLocation)(Q.pincode?Q:null)),O&&(C((0,u.setCartAmountBreakup)(O)),C((0,u.setCartTotalAmount)(O?.hcBreakdown?.effectiveAmount||0))),B?.length&&C((0,u.appendOutOfStockSkus)([...B]))};e.s(["handleServerCartResponse",0,C],895162)},185716,e=>{"use strict";var t,a=e.i(271944);let i=(e=[])=>e?.length>0&&e?.map(({sku:e,magentoId:t,magentoStatus:a,name:i,quantity:r,price:s,sellingPrice:n,mou:l,thumbnail:o,isVCRestricted:c,isPrescriptionRequired:u,subcategory:d,typeId:p,urlKey:m,isInStock:b,maxOrderQty:g,sellOnline:y,isCouponApplicable:C,isShippable:f,cashback:h,freeProduct:k,tatCity:_,tatDuration:v,storeType:I,couponDiscountPrice:P,itemCouponCashback:S,setReminder:A,reminderDuration:D,packForm:x,packSize:T,isVariantAvailable:O,multiVariants:R,moq:B,corporateStatus:N,classifier_1:q,classifier_2:w,classifier_3:U,is_generic:M})=>({url_key:m,description:"",id:t,image:[],isVCRestricted:c,is_in_stock:!!b,sell_online:!!y,is_prescription_required:u,name:i,price:s,sellingPrice:n,sku:e,small_image:o,status:Number(a),thumbnail:o,type_id:p,quantity:r,mou:l,isShippable:f,MaxOrderQty:g,couponFree:Number(k),subcategory:d,cashback:h,isCouponApplicable:C,tatCity:_,tatDuration:v,storeType:I,couponDiscountPrice:P,itemCouponCashback:S,packForm:x,packSize:T,isReminderSet:A,reminderDuration:D,isVariantAvailable:O,multiVariants:R,oosNotified:!1,moq:B,corporateStatus:N,classifier_1:q,classifier_2:w,classifier_3:U,is_generic:M}))||[],r=(e=[])=>e?.length&&e?.map(e=>{let{sku:t,discountInfo:a,qtyDropdown:i,flags:r,corporate:s,options:n,bmsmDetails:l}=e,o=i?.quantities?.find(e=>e.isSelected)?.qty||1,c=(l?.tiers||[]).filter(e=>null!==e).map(e=>({tier:e.precedence??null,quantity:e.quantity??null,discount:e.discountInPercent??null,price:null}));return{isShippable:!0,id:t?.id??0,sku:t?.sku??"",name:t?.name??"",description:"",url_key:t?.urlKey??"",subcategory:t?.subcategory||"",type_id:t?.type||"",mou:t?.packInformation??"",moq:t?.moq??1,price:a?.mrp??0,sellingPrice:a?.price??0,special_price:a?.price??0,discountPercentage:a?.discountInPercent??null,discount:a?.mrp&&a?.price?a.mrp-a.price:null,originalPrice:a?.mrp??null,quantity:o,MaxOrderQty:10,isVCRestricted:t?.isVCRestricted??!1,is_prescription_required:t?.isPrescriptionRequired?"1":"0",status:"in-stock",thumbnail:t?.thumbnail??null,small_image:t?.thumbnail??null,image:null,couponFree:+!!r?.freebie,cashback:null,circleCashbackObject:null,circleCashback:a?.circleCashBackDetails??null,isCouponApplicable:null,couponDiscountPrice:null,itemCouponCashback:null,corporateStatus:s?.status??null,tatCity:null,tatDuration:null,storeType:null,isReminderSet:!1,reminderDuration:null,is_express:null,brand:t?.manufacturer??null,isVariantAvailable:n?.isMultiVariants??!1,multiVariants:null,isSubstituteAvailable:n?.isSubstitute??!1,susbtitutes:null,isReplacementProductsAvailable:n?.isReplacementProducts??!1,replacementProducts:null,oosNotified:!1,transaction:null,bmsm_tiers_data:c}})||[],s=(e,t)=>{let a=e.mrp-e.price;return t?a:a>0?Math.round(a/e.mrp*100):0};(t={}).ALL="ALL",t.CIRCLE="CIRCLE",t.SPECIALDISCOUNTS="SPECIALDISCOUNTS",e.s(["PharmaProductDiscount",0,(e,t)=>Math.floor((Number(t)-Number(e))/t*100),"diagnosticProductDiscount",0,e=>Math.floor((Number(e[0].mrp)-Number(e[0].price))/e[0].mrp*100),"getCartShipments",0,(e,t=1)=>{let a=[],r=[];for(let s=1;s<=t;s++){let t=e?.filter(e=>e?.shipmentNo===s),n=i(t);n?.length>0&&(n?.find(({isShippable:e})=>!e)?a?.push({items:n,orderTat:t?.[0]?.tat,estimatedAmount:n?.reduce((e,t)=>e+t.sellingPrice,0),isOutOfStockShipment:!0,shipmentNumber:s}):r?.push({items:n,orderTat:t?.[0]?.tat,estimatedAmount:n.reduce((e,t)=>e+t.sellingPrice,0),isOutOfStockShipment:!1,shipmentNumber:s}))}return r?.concat(a)},"getGuestCartItemsFromServer",0,r,"getGuestCartShipments",0,(e=[],t=1)=>{let a=[],i=[];for(let s=1;s<=t;s++){let t=e?.find(e=>e?.shipmentDetails?.shipmentNo===s);if(t?.products){let e=r(t.products.filter(e=>null!==e));if(e?.length>0){let r=t.shipmentDetails?.isShippable===!1||!!e.find(({isShippable:e})=>!e),n=t.shipmentDetails?.tat?.toString()||void 0;r?a.push({items:e,orderTat:n,estimatedAmount:e.reduce((e,t)=>e+t.sellingPrice,0),isOutOfStockShipment:!0,shipmentNumber:s}):i.push({items:e,orderTat:n,estimatedAmount:e.reduce((e,t)=>e+t.sellingPrice,0),isOutOfStockShipment:!1,shipmentNumber:s})}}}return i.concat(a)},"getPatientCartItemsFromServer",0,i,"getTestsCirclePrice",0,(e,t)=>{if(e){let i=e.filter(e=>{let t=!0;return new Date().setHours(0,0,0,0),e.status&&"active"!==e.status.toLowerCase().trim()?t=!1:e.groupPlan||(t=!1),t}),r={isCircleDiscountGreater:!1,circleMrp:0,circlePrice:0,allMrp:0,allPrice:0,actualMrp:0,actualAllPrice:0,discountPercentage:0,couponCode:"",groupPlan:null,nonCirclePlan:null};if(i&&0!==i.length){let e=0,n=(0,a.default)(i);n.forEach(i=>{i.actualMrp=i.actualMrp||(0,a.default)(i.mrp),i.mrp=Math.max(t||0,i.mrp),e=Math.max(e,s(i,!0))});let l=n.find(t=>s(t,!0)===e),o=n.find(e=>"ALL"===e.groupPlan);if(r.actualAllPrice=o?.price,l)if(r.discountPercentage=s(l),r.couponCode=l.couponCode,r.groupPlan=l.groupPlan,r.actualMrp=l.actualMrp,r.nonCirclePlan=l.groupPlan,"CIRCLE"===l.groupPlan){r.isCircleDiscountGreater=!0,r.circleMrp=l.mrp,r.circlePrice=l.price;let e=n.find(e=>"SPECIALDISCOUNTS"===e.groupPlan);e?(r.allMrp=e?.mrp,r.allPrice=e?.price,r.nonCirclePlan="SPECIALDISCOUNTS"):(r.allMrp=o?.mrp,r.allPrice=o?.price,r.nonCirclePlan="ALL")}else r.isCircleDiscountGreater=!1,r.circlePrice=0,r.circleMrp=0,r.allMrp=l.mrp,r.allPrice=l.price}return r}}])},422417,e=>{"use strict";var t=e.i(122290),a=e.i(374654),i=e.i(895162),r=e.i(357377),s=e.i(504091),n=e.i(864286),l=e.i(26502);let o=async({authToken:e,cartInputDataV2:o,guestCartInputDataV2:c,dispatch:u,saveCartMutation:d,pharmaAddressDetails:p,whatsAppReminderSettings:m,customerCartPreferences:b,routerPathName:g,setPhoneNumberUpdatedTag:y=()=>{},setIsCartFetchingUpdatingRequired:C,isCartFetchingUpdatingRequired:f,totalCartItemCount:h})=>{u((0,t.setAllowServerUpdate)(!1)),u((0,t.setUpdatingCart)(a.ThunkResolvedStatus.pending));try{let k;if(o?.patientId){let e=await d({variables:{cartInputDataV2:o}});k=e?.data?.saveCartV2}else{let e=await (0,s.guestSaveCartApi)(c);e?.data?.id&&(0,n.isBrowser)()&&localStorage.setItem("guestCartId",e?.data?.id),k=e}await (0,r.yieldToMain)(),await (0,i.handleServerCartResponse)(k,p,m,b,g,u,h),await (0,r.yieldToMain)(),u((0,t.setUpdatingCart)(a.ThunkResolvedStatus.fulfilled)),await (0,l.default)({dispatch:u,authToken:e}),f&&(u((0,t.setCartFetchingUpdating)(a.ThunkResolvedStatus.fulfilled)),C&&C(!1)),(0,n.isBrowser)()&&(localStorage.removeItem("cartItems"),localStorage.removeItem("circlePlanId")),y(!0)}catch(e){u((0,t.setUpdatingCart)(a.ThunkResolvedStatus.rejected))}finally{u((0,t.setUserActionPayload)(null)),u((0,t.setGuestUserActionPayload)(null)),u((0,t.setAllowServerUpdate)(!0))}};e.s(["saveServerCart",0,o])},102069,e=>{"use strict";let t=(0,e.i(848643).createSlice)({name:"healthScan",initialState:{healthScanResults:null,newProfileCreated:!1,allProfilesData:null},reducers:{updateHealthScan(e,t){e.healthScanResults=t?.payload},updateNewProfile(e,t){e.newProfileCreated=t?.payload},updateAllProfileData(e,t){e.allProfilesData=t?.payload}}}),{updateHealthScan:a,updateNewProfile:i,updateAllProfileData:r}=t.actions,s=t.reducer;e.s(["default",0,s,"updateNewProfile",0,i],102069)},597512,e=>{"use strict";var t=e.i(987257);e.s(["default",0,({prescriptionAddedBy:e,prismFileId:a,appointmentId:i})=>e===t.PrescriptionAddedBy.AUTO_UPLOAD||!!a||!!i])}]);

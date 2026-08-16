@@ -1,0 +1,155 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,822315,(e,t,r)=>{e.e,t.exports=function(){"use strict";var e="millisecond",t="second",r="minute",n="hour",a="week",i="month",s="quarter",o="year",u="date",c="Invalid Date",l=/^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/,d=/\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,p=function(e,t,r){var n=String(e);return!n||n.length>=t?e:""+Array(t+1-n.length).join(r)+e},f="en",m={};m[f]={name:"en",weekdays:"Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),months:"January_February_March_April_May_June_July_August_September_October_November_December".split("_"),ordinal:function(e){var t=["th","st","nd","rd"],r=e%100;return"["+e+(t[(r-20)%10]||t[r]||t[0])+"]"}};var h="$isDayjsObject",g=function(e){return e instanceof S||!(!e||!e[h])},E=function e(t,r,n){var a;if(!t)return f;if("string"==typeof t){var i=t.toLowerCase();m[i]&&(a=i),r&&(m[i]=r,a=i);var s=t.split("-");if(!a&&s.length>1)return e(s[0])}else{var o=t.name;m[o]=t,a=o}return!n&&a&&(f=a),a||!n&&f},y=function(e,t){if(g(e))return e.clone();var r="object"==typeof t?t:{};return r.date=e,r.args=arguments,new S(r)},D={s:p,z:function(e){var t=-e.utcOffset(),r=Math.abs(t);return(t<=0?"+":"-")+p(Math.floor(r/60),2,"0")+":"+p(r%60,2,"0")},m:function e(t,r){if(t.date()<r.date())return-e(r,t);var n=12*(r.year()-t.year())+(r.month()-t.month()),a=t.clone().add(n,i),s=r-a<0,o=t.clone().add(n+(s?-1:1),i);return+(-(n+(r-a)/(s?a-o:o-a))||0)},a:function(e){return e<0?Math.ceil(e)||0:Math.floor(e)},p:function(c){return({M:i,y:o,w:a,d:"day",D:u,h:n,m:r,s:t,ms:e,Q:s})[c]||String(c||"").toLowerCase().replace(/s$/,"")},u:function(e){return void 0===e}};D.l=E,D.i=g,D.w=function(e,t){return y(e,{locale:t.$L,utc:t.$u,x:t.$x,$offset:t.$offset})};var S=function(){function p(e){this.$L=E(e.locale,null,!0),this.parse(e),this.$x=this.$x||e.x||{},this[h]=!0}var f=p.prototype;return f.parse=function(e){this.$d=function(e){var t=e.date,r=e.utc;if(null===t)return new Date(NaN);if(D.u(t))return new Date;if(t instanceof Date)return new Date(t);if("string"==typeof t&&!/Z$/i.test(t)){var n=t.match(l);if(n){var a=n[2]-1||0,i=(n[7]||"0").substring(0,3);return r?new Date(Date.UTC(n[1],a,n[3]||1,n[4]||0,n[5]||0,n[6]||0,i)):new Date(n[1],a,n[3]||1,n[4]||0,n[5]||0,n[6]||0,i)}}return new Date(t)}(e),this.init()},f.init=function(){var e=this.$d;this.$y=e.getFullYear(),this.$M=e.getMonth(),this.$D=e.getDate(),this.$W=e.getDay(),this.$H=e.getHours(),this.$m=e.getMinutes(),this.$s=e.getSeconds(),this.$ms=e.getMilliseconds()},f.$utils=function(){return D},f.isValid=function(){return this.$d.toString()!==c},f.isSame=function(e,t){var r=y(e);return this.startOf(t)<=r&&r<=this.endOf(t)},f.isAfter=function(e,t){return y(e)<this.startOf(t)},f.isBefore=function(e,t){return this.endOf(t)<y(e)},f.$g=function(e,t,r){return D.u(e)?this[t]:this.set(r,e)},f.unix=function(){return Math.floor(this.valueOf()/1e3)},f.valueOf=function(){return this.$d.getTime()},f.startOf=function(e,s){var c=this,l=!!D.u(s)||s,d=D.p(e),p=function(e,t){var r=D.w(c.$u?Date.UTC(c.$y,t,e):new Date(c.$y,t,e),c);return l?r:r.endOf("day")},f=function(e,t){return D.w(c.toDate()[e].apply(c.toDate("s"),(l?[0,0,0,0]:[23,59,59,999]).slice(t)),c)},m=this.$W,h=this.$M,g=this.$D,E="set"+(this.$u?"UTC":"");switch(d){case o:return l?p(1,0):p(31,11);case i:return l?p(1,h):p(0,h+1);case a:var y=this.$locale().weekStart||0,S=(m<y?m+7:m)-y;return p(l?g-S:g+(6-S),h);case"day":case u:return f(E+"Hours",0);case n:return f(E+"Minutes",1);case r:return f(E+"Seconds",2);case t:return f(E+"Milliseconds",3);default:return this.clone()}},f.endOf=function(e){return this.startOf(e,!1)},f.$set=function(a,s){var c,l=D.p(a),d="set"+(this.$u?"UTC":""),p=((c={}).day=d+"Date",c[u]=d+"Date",c[i]=d+"Month",c[o]=d+"FullYear",c[n]=d+"Hours",c[r]=d+"Minutes",c[t]=d+"Seconds",c[e]=d+"Milliseconds",c)[l],f="day"===l?this.$D+(s-this.$W):s;if(l===i||l===o){var m=this.clone().set(u,1);m.$d[p](f),m.init(),this.$d=m.set(u,Math.min(this.$D,m.daysInMonth())).$d}else p&&this.$d[p](f);return this.init(),this},f.set=function(e,t){return this.clone().$set(e,t)},f.get=function(e){return this[D.p(e)]()},f.add=function(e,s){var u,c=this;e=Number(e);var l=D.p(s),d=function(t){var r=y(c);return D.w(r.date(r.date()+Math.round(t*e)),c)};if(l===i)return this.set(i,this.$M+e);if(l===o)return this.set(o,this.$y+e);if("day"===l)return d(1);if(l===a)return d(7);var p=((u={})[r]=6e4,u[n]=36e5,u[t]=1e3,u)[l]||1,f=this.$d.getTime()+e*p;return D.w(f,this)},f.subtract=function(e,t){return this.add(-1*e,t)},f.format=function(e){var t=this,r=this.$locale();if(!this.isValid())return r.invalidDate||c;var n=e||"YYYY-MM-DDTHH:mm:ssZ",a=D.z(this),i=this.$H,s=this.$m,o=this.$M,u=r.weekdays,l=r.months,p=r.meridiem,f=function(e,r,a,i){return e&&(e[r]||e(t,n))||a[r].slice(0,i)},m=function(e){return D.s(i%12||12,e,"0")},h=p||function(e,t,r){var n=e<12?"AM":"PM";return r?n.toLowerCase():n};return n.replace(d,function(e,n){return n||function(e){switch(e){case"YY":return String(t.$y).slice(-2);case"YYYY":return D.s(t.$y,4,"0");case"M":return o+1;case"MM":return D.s(o+1,2,"0");case"MMM":return f(r.monthsShort,o,l,3);case"MMMM":return f(l,o);case"D":return t.$D;case"DD":return D.s(t.$D,2,"0");case"d":return String(t.$W);case"dd":return f(r.weekdaysMin,t.$W,u,2);case"ddd":return f(r.weekdaysShort,t.$W,u,3);case"dddd":return u[t.$W];case"H":return String(i);case"HH":return D.s(i,2,"0");case"h":return m(1);case"hh":return m(2);case"a":return h(i,s,!0);case"A":return h(i,s,!1);case"m":return String(s);case"mm":return D.s(s,2,"0");case"s":return String(t.$s);case"ss":return D.s(t.$s,2,"0");case"SSS":return D.s(t.$ms,3,"0");case"Z":return a}return null}(e)||a.replace(":","")})},f.utcOffset=function(){return-(15*Math.round(this.$d.getTimezoneOffset()/15))},f.diff=function(e,u,c){var l,d=this,p=D.p(u),f=y(e),m=(f.utcOffset()-this.utcOffset())*6e4,h=this-f,g=function(){return D.m(d,f)};switch(p){case o:l=g()/12;break;case i:l=g();break;case s:l=g()/3;break;case a:l=(h-m)/6048e5;break;case"day":l=(h-m)/864e5;break;case n:l=h/36e5;break;case r:l=h/6e4;break;case t:l=h/1e3;break;default:l=h}return c?l:D.a(l)},f.daysInMonth=function(){return this.endOf(i).$D},f.$locale=function(){return m[this.$L]},f.locale=function(e,t){if(!e)return this.$L;var r=this.clone(),n=E(e,t,!0);return n&&(r.$L=n),r},f.clone=function(){return D.w(this.$d,this)},f.toDate=function(){return new Date(this.valueOf())},f.toJSON=function(){return this.isValid()?this.toISOString():null},f.toISOString=function(){return this.$d.toISOString()},f.toString=function(){return this.$d.toUTCString()},p}(),b=S.prototype;return y.prototype=b,[["$ms",e],["$s",t],["$m",r],["$H",n],["$W","day"],["$M",i],["$y",o],["$D",u]].forEach(function(e){b[e[1]]=function(t){return this.$g(t,e[0],e[1])}}),y.extend=function(e,t){return e.$i||(e(t,S,y),e.$i=!0),y},y.locale=E,y.isDayjs=g,y.unix=function(e){return y(1e3*e)},y.en=m[f],y.Ls=m,y.p={},y}()},155618,e=>{"use strict";let t;var r,n,a,i,s,o,u,c,l,d,p,f=e.i(843476),m=e.i(271645),h=e.i(417137),g=/bot|crawl|http|lighthouse|scan|search|spider/i,E=e.i(822315);let y="u">typeof crypto&&crypto.randomUUID&&crypto.randomUUID.bind(crypto),D=new Uint8Array(16),S=[];for(let e=0;e<256;++e)S.push((e+256).toString(16).slice(1));(r=u||(u={})).APPLICABLE="APPLICABLE",r.APPLIED="APPLIED",r.NOT_APPLICABLE="NOT_APPLICABLE",(n=c||(c={})).INSTANT="INSTANT",n.EXPRESS="EXPRESS",n.OOS="OOS",n.DEFAULT="DEFAULT",(a=l||(l={})).INITIALISED="INITIALISED",a.LOADING="LOADING",a.FULFILLED="FULFILLED",a.ERROR="ERROR",a.RENDERED="RENDERED",a.VIEWED="VIEWED",a.ENGAGED="ENGAGED",a.VISIBLE="VISIBLE",a.HIDDEN="HIDDEN",(i=d||(d={})).CONTAINER="CONTAINER",i.SECTION="SECTION",i.ITEM="CARD",(s=p||(p={})).RENDERED="Rendered",s.CLICK="Click",s.ERROR="Error",s.COMPONENT_STATE="ComponentState",s.IMPRESSION="Impression";let b=`
+self.onmessage = async function(event) {
+    const { url, options, retries = 2, delay = 1000 } = event.data;
+
+    for (let i = 0; i <= retries; i++) {
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) {
+                throw new Error(\`Fetch error: \${response.statusText}\`);
+            }
+            self.postMessage(await response.json());
+            return;
+        } catch (error) {
+            if (i < retries) {
+                await new Promise((resolve) => setTimeout(resolve, delay));
+            } else {
+                self.postMessage({ error: error.message || 'Unknown error' });
+            }
+        }
+    }
+
+    self.postMessage({ error: 'Fetch failed after retries' });
+};
+`,I=()=>{if("u">typeof navigator){var e;return!!(e=navigator.userAgent)&&(function(){if(o instanceof RegExp)return o;try{o=RegExp(" daum[ /]| deusu/|(?:^|[^g])news(?!sapphire)|(?<! (?:channel/|google/))google(?!(app|/google| pixel))|(?<! cu)bots?(?:\\b|_)|(?<!(?:lib))http|(?<![hg]m)score|(?<!cam)scan|24x7|@[a-z][\\w-]+\\.|\\(\\)|\\.com\\b|\\b\\w+\\.ai|\\bmanus-user/|\\bort/|\\bperl\\b|\\bsecurityheaders\\b|\\btime/|\\||^[\\w \\.\\-\\(?:\\):%]+(?:/v?\\d+(?:\\.\\d+)?(?:\\.\\d{1,10})*?)?(?:,|$)|^[^ ]{50,}$|^\\d+\\b|^\\W|^\\w*search\\b|^\\w+/[\\w\\(\\)]*$|^\\w+/\\d\\.\\d\\s\\([\\w@]+\\)$|^active|^ad muncher|^amaya|^apache/|^avsdevicesdk/|^azure|^biglotron|^bot|^bw/|^clamav[ /]|^client/|^cobweb/|^custom|^ddg[_-]android|^discourse|^dispatch/\\d|^downcast/|^duckduckgo|^email|^facebook|^getright/|^gozilla/|^hobbit|^hotzonu|^hwcdn/|^igetter/|^jeode/|^jetty/|^jigsaw|^microsoft bits|^movabletype|^mozilla/\\d\\.\\d\\s[\\w\\.-]+$|^mozilla/\\d\\.\\d\\s\\(compatible;?(?:\\s[\\w\\d-.]+\\/\\d+\\.\\d+)?\\)$|^navermailapp|^netsurf|^offline|^openai/|^owler|^php|^postman|^python|^rank|^read|^reed|^rest|^rss|^snapchat|^space bison|^svn|^swcd |^taringa|^thumbor/|^track|^w3c|^webbandit/|^webcopier|^wget|^whatsapp|^wordpress|^xenu link sleuth|^yahoo|^yandex|^zdm/\\d|^zoom marketplace/|advisor|agent\\b|analyzer|archive|ask jeeves/teoma|audit|bit\\.ly/|bluecoat drtr|browsex|burpcollaborator|capture|catch|check\\b|checker|chrome-lighthouse|chromeframe|classifier|cloudflare|convertify|crawl|cypress/|dareboost|datanyze|dejaclick|detect|dmbrowser|download|exaleadcloudview|feed|fetcher|firephp|functionize|grab|headless|httrack|hubspot marketing grader|ibisbrowser|infrawatch|insight|inspect|iplabel|java(?!;)|library|linkcheck|mail\\.ru/|manager|measure|monitor\\b|neustar wpm|node\\b|nutch|offbyone|onetrust|optimize|pageburst|pagespeed|parser|phantomjs|pingdom|powermarks|preview|proxy|ptst[ /]\\d|retriever|rexx;|rigor|rss\\b|scrape|server|sogou|sparkler/|speedcurve|spider|splash|statuscake|supercleaner|synapse|synthetic|tools|torrent|transcoder|url|validator|virtuoso|wappalyzer|webglance|webkit2png|whatcms/|xtate/","i")}catch(e){o=g}return o})().test(e)}return!1},$=async(e,t,r=2,n=1e3)=>{for(let a=0;a<=r;a++)try{let r=await fetch(e,t);if(!r.ok)throw Error(`Fetch error: ${r.statusText}`);return r}catch(e){if(a<r)await new Promise(e=>setTimeout(e,n));else throw e}throw console.error("Fetch failed after retries",{url:e,options:t,retries:r,delay:n},"BUSINESS_VERTICAL.PHARMA"),Error("Fetch failed after retries")},v=async(e,t,r)=>{let n=new Blob([b],{type:"application/javascript"}),a=new Worker(URL.createObjectURL(n),{type:"module"});I()?console.warn("Telemetry call skipped: User agent matched a known bot pattern."):e?.resourceLogs?.[0]?.scopeLogs?.[0]?.logRecords?.length&&(a.postMessage({url:t,options:{method:"POST",keepalive:!0,headers:{"Content-Type":"application/json",Authorization:r},body:JSON.stringify(e)},retries:2,delay:1e3}),a.onerror=e=>{console.error("Error in Worker:",e.message)})},T=({url:e,actionType:t,traceData:r,mobileNumber:n})=>{e&&r.meta.isAd&&r.action.name===t&&$(function(e,t){let r=new URL(e);for(let[e,n]of Object.entries(t))r.searchParams.set(e,n.toString());return r.toString()}(e,{event_time:function(e=new Date){return"string"==typeof e&&(e=new Date(e)),e.getTime()}(),cli_ubid:h.default.SHA256(`9l&@n$!${n??""}`).toString(h.default.enc.Hex)}),{method:"POST",keepalive:!0})},O=(e,t="",r=10)=>{try{if(r<=0)return[];return Object.entries(e).filter(([e,t])=>null!=t&&""!==t&&("object"!=typeof t||!!Array.isArray(t)||0!==Object.keys(t).length)).flatMap(([e,n])=>{let a=t?`${t}.${e}`:e;if("object"==typeof n&&!Array.isArray(n))return O(n,a,r-1);if(!Array.isArray(n))return{key:a,value:R(a,n)};{let e=n.filter(e=>null!=e&&""!==e).map(e=>"object"==typeof e&&null!==e?{kvlistValue:{values:O(e,void 0,r-1)}}:R(a,e));return{key:a,value:{arrayValue:{values:e}}}}})}catch(e){return console.error("Error formatting telemetry attributes:",e,"BUSINESS_VERTICAL.PHARMA"),[]}},_=["clientTimestamp","container.position","section.position.absolute","section.position.relative","user.location.pincode","card.index"],A=["user.subscription.isCircleUser","meta.isAd"],R=(e,t)=>A.includes(e)?{boolValue:!!t}:_.includes(e)?{intValue:Number(t)}:{stringValue:String(t)},w=.9>Math.random(),k=function(e){if(y&&!e)return y();let r=(e=e||{}).random??e.rng?.()??function(){if(!t){if("u"<typeof crypto||!crypto.getRandomValues)throw Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");t=crypto.getRandomValues.bind(crypto)}return t(D)}();if(r.length<16)throw Error("Random bytes length must be >= 16");return r[6]=15&r[6]|64,r[8]=63&r[8]|128,function(e,t=0){return(S[e[t+0]]+S[e[t+1]]+S[e[t+2]]+S[e[t+3]]+"-"+S[e[t+4]]+S[e[t+5]]+"-"+S[e[t+6]]+S[e[t+7]]+"-"+S[e[t+8]]+S[e[t+9]]+"-"+S[e[t+10]]+S[e[t+11]]+S[e[t+12]]+S[e[t+13]]+S[e[t+14]]+S[e[t+15]]).toLowerCase()}(r)}(),P=(0,m.createContext)(void 0);e.s(["TelemetryProvider",0,({children:e,currentPatient:t,subscriptions:r,TELEMETRY_URL:n,TELEMETRY_TOKEN:a,UNIQUE_SESSION_ID:i,SERVICE_NAME:s})=>{(0,m.useEffect)(()=>{let e=()=>{u()};return window.addEventListener("beforeunload",e),()=>{window.removeEventListener("beforeunload",e)}},[]);let o=(0,m.useCallback)(()=>({mobileNumber:t?.mobileNumber,patientId:t?.id,location:"",subscription:{isCircleUser:"true"}}),[t,"",r]),u=(0,m.useCallback)(async()=>{let e=c.current.splice(0,10);if(0===e.length)return;let t=o();v({resourceLogs:[{resource:{attributes:[{key:"service.name",value:{stringValue:s||"telemetry"}},{key:"service.platform",value:{stringValue:"web"}},{key:"service.osVersion",value:{stringValue:""}},{key:"service.userAgent",value:{stringValue:""}}]},scopeLogs:[{scope:{name:"web-logger",version:"1.0.0"},logRecords:e.map(({traceData:e})=>{let r=e?.state?.name==="Error",n={Type:e?.componentType,State:e?.state?.name,Action:e?.action?.name,SectionKey:e?.section?.reduxKeyInApp};return{timestampUnixNano:1e6*Date.now(),timeUnixNano:1e6*Date.now(),body:{stringValue:Object.entries(n).filter(([e,t])=>t).map(([e,t])=>`[${e} - ${t}]`).join(" ")||""},severityText:r?"ERROR":"INFO",severityNumber:+!!r,attributes:[{key:"web.version",value:{stringValue:"1.0"}},{key:"app.environment",value:{stringValue:""}},...O(e),...O({user:t})]}})}]}]},n,a)},[o]),c=(0,m.useRef)([]),h=(0,m.useCallback)(e=>{0!==e.length&&(c.current.push(...e),c.current.length>=10&&u())},[u]),g=(0,m.useCallback)(({screenName:e,contentfulScreenIdentifier:r,sectionKey:n,state:a,sectionData:s,action:o,isAd:u=!1,type:c="",productIndex:f,itemData:m,container:g})=>{if(I())return void console.warn("Telemetry call skipped: User agent matched a known bot pattern.");if(!e||!n&&!g)return void console.error("Add Pre Not tracking:","Error","BUSINESS_VERTICAL.PHARMA");let y=s?((e={})=>{let t=e?.section_behaviours?.map(e=>e?.behaviour_name);return{heading:e?.section_heading,name:e?.section_name,identifier:e?.section_title,lob:e?.section_lob,position:{relative:e?.section_order,absolute:e?.section_order},behaviors:t,componentName:e?.section_meta?.variant,type:e?.section_type,dataSource:{type:e?.section_data_source?.type}}})(s):{},D=g?{identifier:g?.name||g?.type,position:g?.position}:{},S={componentType:c||(o?d.ITEM:""),...((e,t)=>{if("VIDEO_INTERACTION"===e)switch(t){case"VIDEO_STARTED":return{state:{name:"VIDEO_STARTED"},action:{name:"VIDEO_STARTED"}};case"VIDEO_PAUSED":return{state:{name:"VIDEO_PAUSED"},action:{name:"VIDEO_PAUSED"}};case"VIDEO_RESUMED":return{state:{name:"VIDEO_RESUMED"},action:{name:"VIDEO_RESUMED"}};case"VIDEO_COMPLETED":return{state:{name:"VIDEO_COMPLETED"},action:{name:"VIDEO_COMPLETED"}};case"VIDEO_ERROR":return{state:{name:"VIDEO_ERROR"},action:{name:"VIDEO_ERROR"}};case"VIDEO_SKIPPED":return{state:{name:"VIDEO_SKIPPED"},action:{name:"VIDEO_SEEKED"}};case"VIDEO_BUFFER_STARTED":return{state:{name:"VIDEO_BUFFERING"},action:{name:"VIDEO_BUFFER_STARTED"}};case"VIDEO_BUFFER_ENDED":return{state:{name:"VIDEO_BUFFERING"},action:{name:"VIDEO_BUFFER_ENDED"}};case"VIDEO_CLOSED":return{state:{name:"VIDEO_CLOSED"},action:{name:"VIDEO_CLOSED"}};default:return{state:{name:"VIDEO_INTERACTION"},action:{name:t}}}return t||e===l.ENGAGED?{state:{name:p.RENDERED},action:{name:p.CLICK,click:{name:t||p.CLICK}}}:e===l.ERROR?{state:{name:p.ERROR},action:{name:p.COMPONENT_STATE}}:e===l.RENDERED?{state:{name:p.RENDERED},action:{name:p.COMPONENT_STATE}}:e===l.VIEWED||e===l.VISIBLE?{state:{name:p.RENDERED},action:{name:p.IMPRESSION}}:{state:{name:e},action:{name:t}}})(a,o),session:{id:k},screen:{name:e,identifier:r},meta:{isAd:u||s?.is_ads_section===!0},...u&&{adPlatform:{pt:s?.pt||m?.pt,au:s?.au||m?.au,crt:s?.crt||m?.crt}},vendor:{name:"Apollo247"},container:D,section:{...y,reduxKeyInApp:n},card:m?{...m,index:f??m?.slideIndex}:{},clientTimestamp:(0,E.default)().valueOf()};S?.meta?.isAd&&(T({url:m?.clickTrackingUrl?.replace("/click","/aclick"),actionType:p.CLICK,mobileNumber:t?.mobileNumber??i,traceData:S}),T({url:m?.impressionTrackingUrl,actionType:p.IMPRESSION,mobileNumber:t?.mobileNumber??i,traceData:S})),w&&h([{traceData:S,isAd:u,type:c}])},[t?.mobileNumber,!0,["+919666828389","+919022223632"],h]);(0,m.useEffect)(()=>{let e=setInterval(u,15e3);return()=>clearInterval(e)},[u]);let y=(0,m.useCallback)(e=>g(e),[g]),D=(0,m.useCallback)(e=>{g({state:l.ENGAGED,...e})},[g]),S=(0,m.useCallback)(({items:e,...t})=>{e.forEach((e,r)=>{(e.isViewable||[l.RENDERED,l.ERROR].includes(t.state))&&g({...t,productIndex:e?.index??r,itemData:e?.item??e})})},[g]),b=(0,m.useCallback)(g,[g]);return(0,f.jsx)(P.Provider,{value:{addEvent:h,fireDynamicStateEvent:y,fireDynamicStateEventBehavior:D,fireDynamicStateEventsFlatListElement:S,fireDynamicStateEventCarouselElement:b,DEBOUNCE_VALUE:100,TELEMETRY_RENDER_TRACKING:!0},children:e})},"useTelemetry",0,()=>{let e=(0,m.useContext)(P);if(!e)throw Error("useTelemetry must be used within a TelemetryProvider1");return e},"useViewportStatus",0,function(e){let t=(0,m.useRef)(null),r=(0,m.useRef)(!1),[n,a]=(0,m.useState)({isInView:!1,entered:!1,left:!1,stayed:!1});return(0,m.useEffect)(()=>{let n=new IntersectionObserver(([e])=>{let t=e.isIntersecting,n=r.current;if(null===n){r.current=t,a({isInView:t,entered:!1,left:!1,stayed:!1});return}a({isInView:t,entered:!n&&t,left:n&&!t,stayed:n&&t}),r.current=t},e);return t.current&&n.observe(t.current),()=>n.disconnect()},[]),{ref:t,viewportStatus:n}}],155618)},169642,e=>{"use strict";var t=e.i(702807);let r=t.default`
+  query getPDPV4(
+    $lat: Float
+    $lng: Float
+    $pincode: String
+    $sku: String!
+    $targetLanguage: String
+  ) {
+    getPDPV4(
+      lng: $lng
+      lat: $lat
+      pincode: $pincode
+      sku: $sku
+      targetLanguage: $targetLanguage
+    )
+  }
+`;t.default`
+  query getSimilarProducts(
+    $lat: Float
+    $lng: Float
+    $pincode: String
+    $sku: String!
+  ) {
+    getSimilarProducts(lng: $lng, lat: $lat, pincode: $pincode, sku: $sku)
+  }
+`,t.default`
+  query getProductAlternatives(
+    $lat: Float
+    $lng: Float
+    $pincode: String
+    $sku: String!
+  ) {
+    getProductAlternatives(lng: $lng, lat: $lat, pincode: $pincode, sku: $sku)
+  }
+`;let n=t.default`
+  query getProductSubstitutes(
+    $lat: Float
+    $lng: Float
+    $pincode: String
+    $sku: String!
+  ) {
+    getProductSubstitutes(lng: $lng, lat: $lat, pincode: $pincode, sku: $sku)
+  }
+`;e.s(["GET_PDP_DETAILS",0,r,"GET_PRODUCT_SUBSTITUTES",0,n])},473186,961416,e=>{"use strict";e.i(58328),e.i(463583),e.i(772746);var t,r=e.i(169642),n=e.i(851108),a=e.i(702807);let i=a.default`
+  query getStoreLocatorData($storeLocatorDataInput: StoreLocatorDataInput!) {
+    getStoreLocatorData(storeLocatorDataInput: $storeLocatorDataInput) {
+      storeAvailability {
+        isStoreAvailable
+      }
+      stores {
+        name
+        address {
+          location
+          coordinates {
+            latitude
+            longitude
+          }
+        }
+        timings
+        contact
+        distance
+        isPreviouslyBrought
+        isOpen
+        storeId
+        reportIssueUrl
+        mapUrl
+        bottomText
+        redirectionUrl
+        skuAvailability {
+          sku
+          isAvailable
+        }
+      }
+    }
+  }
+`;a.default`
+  query GetStoreDetails($storeDetailsInput: StoreDetailsInput!) {
+    getStoreDetails(storeDetailsInput: $storeDetailsInput) {
+      storeCode
+      storeId
+      city
+      axdcCode
+      storeName
+      omniChannel
+      clusterId
+      allocationProfileName
+      hubType
+      lvdc
+      cvdc
+      homeDelivery
+      curdbSidePickup
+      lat
+      lng
+      openTime
+      closeTime
+      storeType
+      lHubExpress
+      primaryDSP
+      secondaryDSP
+      primaryTat
+      distance
+      orderLimit
+      radius
+      fulfillmentType
+      address
+      phone
+    }
+  }
+`;let s=a.default`
+  query GetSkuAvailabilityWithStore(
+    $skuAvailabilityWithStoreInput: SkuAvailabilityWithStoreInput!
+  ) {
+    getSkuAvailabilityWithStore(
+      skuAvailabilityWithStoreInput: $skuAvailabilityWithStoreInput
+    ) {
+      sku
+      isAvailable
+    }
+  }
+`;e.s(["GET_PHARMA_STORES",0,i,"GET_SKU_AVAILABILITY_WITH_STORE",0,s],961416);var o=((t={})[t.TEN_MINUTES=600]="TEN_MINUTES",t[t.HALF_HOUR=1800]="HALF_HOUR",t[t.HOUR=3600]="HOUR",t[t.SIX_HOUR=21600]="SIX_HOUR",t[t.HALF_DAY=43200]="HALF_DAY",t[t.DAY=86400]="DAY",t);e.i(462986),e.i(357377),e.i(188130),e.i(712878);let u=async(e,t,r)=>await e.query({query:i,variables:{storeLocatorDataInput:{lat:Number(t),lng:Number(r)}}});e.s(["fetchRelatedProducts",0,({productSku:e,apolloClient:t,pincode:a,apolloLogger:i,correlationId:s,pageUrl:o,searchParams:u,referer:c,latitude:l,longitude:d})=>t.query({query:r.GET_PRODUCT_SUBSTITUTES,variables:{pincode:a||"",sku:e,lat:l,lng:d},fetchPolicy:"no-cache",context:{headers:{"x-correlation-id":s}}}).then(({data:t})=>(i?.info({event:n.API_GQL_GET_PRODUCT_SUBSTITUTES,message:`GET_PRODUCT_SUBSTITUTES API Success with variables ${JSON.stringify({variables:{pincode:a||"",sku:e,lat:l,lng:d}})} and response -> ${JSON.stringify({data:t})}`,correlationId:s,identifier:o,output:{referer:c,searchParams:u}}),t?.getProductSubstitutes)).catch(t=>(i?.error({event:n.API_GQL_GET_PRODUCT_SUBSTITUTES,error:t,type:t?.name,message:`GET_PRODUCT_SUBSTITUTES API Error with variables ${JSON.stringify({variables:{pincode:a||"",sku:e,lat:l,lng:d}})}`,correlationId:s,identifier:o,output:{referer:c,searchParams:u}}),{product_count:0,products:[]})),"getItemInfo",0,(e,t)=>e?.mapping_content?.productMainInfo?.filter(e=>e?.key===t),"getMedicineDetailsApi",0,({productSku:e,apolloClient:t,pincode:a,language:i,apolloLogger:s,correlationId:u,pageUrl:c,shouldCache:l=!0,searchParams:d,referer:p,latitude:f,longitude:m})=>{try{let h=t.query({query:r.GET_PDP_DETAILS,variables:{pincode:a||"",sku:e,targetLanguage:i||"",...f&&m?{lat:f,lng:m}:{}},fetchPolicy:"no-cache",context:{headers:{"x-correlation-id":u},...l?{timeToLive:o.HOUR}:{}}});return s?.info({event:n.API_GQL_GET_PDP_DETAILS,message:`getPDPV4(
+        $lat: Float
+        $lng: Float
+        $pincode: String
+        $sku: String!
+        $targetLanguage: String
+     ) API Success for variables ${JSON.stringify({pincode:a||"",sku:e,targetLanguage:i||""})}`,correlationId:u,identifier:c,output:{referer:p,searchParams:d}}),h}catch(t){s?.error({event:n.API_GQL_GET_PDP_DETAILS,error:t,type:`${t?.name}`,message:`getPDPV4(
+        $lat: Float
+        $lng: Float
+        $pincode: String
+        $sku: String!
+        $targetLanguage: String
+     ) API ERROR for variables ${JSON.stringify({pincode:a||"",sku:e,targetLanguage:i||""})}`,correlationId:u,identifier:c,output:{referer:p,searchParams:d}})}},"getStoreAvailability",0,u],473186)}]);

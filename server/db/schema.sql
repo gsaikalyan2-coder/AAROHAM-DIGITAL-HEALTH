@@ -1,0 +1,29 @@
+-- ============================================================================
+-- Aaroham — schema location notice
+-- ----------------------------------------------------------------------------
+-- The canonical DDL is no longer held in this file. It moved, unchanged, to:
+--
+--     server/db/migrations/001_initial_schema.sql
+--
+-- Reason (Phase 5A). Holding the DDL both here and in the migration set would
+-- create two sources of truth that drift the moment either is amended. The
+-- migration set is the one that is actually executed, so it is the one that is
+-- authoritative. Nothing was removed in the move.
+--
+-- Applied schema = 001_initial_schema.sql, then every later migration in
+-- filename order:
+--
+--     001_initial_schema.sql              13 tables, user_role enum, indexes
+--     002_dedup_and_lookup_constraints    unique mobile (dedup key), lookups
+--     003_updated_at_triggers             maintains updated_at; audit_logs
+--                                         refuses UPDATE and DELETE
+--     004_deny_data_api_access            closes the provider's auto-generated
+--                                         REST API over the register
+--
+-- To build a database from empty:
+--     npm run db:migrate     apply all pending migrations
+--     npm run db:seed        load the departmental demonstration dataset
+--
+-- Both commands are safe to re-run. See README.md and PROJECT_PLAN.md §5.
+-- Engine: PostgreSQL 14 or later, exclusively — see PROJECT_PLAN.md §4.
+-- ============================================================================

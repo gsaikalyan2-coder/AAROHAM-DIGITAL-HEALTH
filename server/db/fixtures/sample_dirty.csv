@@ -1,0 +1,8 @@
+full_name,mobile,date_of_birth,gender,native_state,current_district,employer,occupation
+,9847012399,14/03/1991,Male,Bihar,Ernakulam,Meridian Constructions,Construction
+Suresh Kumar,12345,02/07/1996,Male,West Bengal,Thrissur,Coastal Seafoods,Packing
+Mohan Das,+91 98470 11111,31/02/1990,Male,Odisha,Ernakulam,Nirman Builders,Masonry
+Bikash Roy,9847011112,05/06/1993,Male,West Bengal,Ernakolam,Green Valley,Plantation
+Rakesh Mandal,9847011113,10/10/2015,Male,Bihar,Kollam,Coastal Seafoods,Loading
+Anil Sahani,9847011114,22/08/1985,Male,Bihar,,Meridian Constructions,Carpentry
+Duplicate Entry,9847011113,10/10/1990,Male,Bihar,Kollam,Coastal Seafoods,Loading

@@ -1,0 +1,460 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,135277,e=>{"use strict";e.s(["default",0,{btn:"tL",tertiarybabyBtn:"uL",secondarybabyBtn:"vL",primarybabyBtn:"wL",tertiaryPharmaBtn:"xL",secondaryPharmaBtn:"yL",primaryPharmaBtn:"zL",tertiaryBtn:"AL",secondaryBtn:"BL",primaryBtn:"CL",fullWidth:"DL",centerContent:"EL",disable:"FL",size20:"GL",sm:"HL",icon:"IL",md:"JL",size24:"KL",lg:"LL",xl:"ML",lIcon:"NL",tIcon:"OL",xs:"PL",square:"QL",inner:"RL"}])},590392,e=>{"use strict";var t=e.i(271645),r=e.i(135277),i=e.i(286140),n=e.i(196483),a=e.i(846950);e.s(["default",0,e=>{let{children:o,color:s,variant:l,onClick:u,onChange:c,onBlur:d,disabled:p,className:m,fullWidth:f,title:b,type:_="button",value:h,leadingIcon:y,trailingIcon:g,size:S,leadingIconClass:I,trailingIconClass:E,loading:P,loaderWidth:R=15,loaderHeight:T=15,ariaLabel:v="Button",buttonHeight:A,onKeyPress:N,onMouseDown:O,onMouseUp:C,onMouseLeave:w,onMouseMove:L,textAlign:U,textColor:B,borderColor:D,innerClassName:M,transparent:$=!1,ref:x}=e;return t.default.createElement("button",{ref:null!=x?x:null,className:`${s?r.default[s+"Btn"]:""}
+      ${l?r.default[l]:""}
+      ${p?r.default.disable:""}
+      ${m||""}
+      ${f?r.default.fullWidth:""}
+      ${S?r.default[S]:""} ${P||!g?r.default.centerContent:""}
+      `,style:{height:A,justifyContent:U,color:B,borderColor:D,...$?n.TRANSPARENT_BUTTON_STYLE:{}},onClick:u,onChange:c,onBlur:d,title:b,type:_,value:h,"aria-label":v,onKeyPress:N,onMouseDown:O,onMouseLeave:w,onMouseMove:L,onMouseUp:C},!P&&t.default.createElement(t.default.Fragment,null,t.default.createElement("span",{className:`${r.default.inner} ${M||""}`},y&&t.default.createElement(a.default,{src:y,className:`${r.default.icon} ${r.default.lIcon} ${I||""}`,alt:"leading icon"}),o),g&&t.default.createElement(a.default,{src:g,className:`${r.default.icon} ${r.default.tIcon} ${E||""}`,alt:"trailing icon"})),P&&t.default.createElement(i.default,{width:R,height:T}))}])},286140,e=>{"use strict";var t=e.i(846950),r=e.i(271645);e.s(["default",0,e=>{let{className:i,width:n,height:a,color:o}=e;return r.default.createElement("div",{className:`CR  ${i||""}`},"secondary"===o?r.default.createElement(t.default,{src:"https://images.apollo247.in/images/white-loader.gif",alt:"loader",width:n,height:a}):r.default.createElement(t.default,{src:"https://images.apollo247.in/images/loader.gif",alt:"loader",width:n,height:a}))}],286140)},846950,952830,126967,e=>{"use strict";var t=e.i(271645);let r=(e,t,r)=>{var i,n,a;let o=null==(i=null==e?void 0:e.parentElement)?void 0:i.clientWidth;return 50*Math.ceil((null!=(a=null!=(n=null!=o?o:r)?n:t)?a:50)/50)},i=()=>Math.max(3,Math.round(2*("u">typeof window&&(null==window?void 0:window.devicePixelRatio)||1))/2),n=({src:e,quality:t,format:r,width:i,dpr:n})=>{let a=[];t&&a.push(`q-${t}`),r&&!/\.svg$/i.test(e)&&a.push(`f-${r}`),i&&a.push(`w-${i}`),n&&a.push(`dpr-${n}`);let[o,s]=(e||"").split("#"),l=null!=o&&o.includes("?")?"&":"?",u=a.join(",");return`${encodeURI(o)}${l}tr=${u},c-at_max${s?`#${s}`:""}`},a=({src:e,quality:t,format:r,width:i,dpr:a})=>`${n({src:e,quality:t,format:r,width:i,dpr:a})} ${i}w`;e.s(["MAX_IMG_QUALITY",0,80,"getApproxContainerWidth",0,r,"getApproxDPR",0,i,"getImageSrcByDPR",0,a,"imageKitLoader",0,n],952830);let o=()=>{let e=navigator,t=e.connection||e.mozConnection||e.webkitConnection,r=(null==t?void 0:t.effectiveType)||"",i=(null==t?void 0:t.downlink)||0;return r.includes("2g")||i<.5?40:r.includes("3g")||i<2?60:(r.includes("4g"),80)};e.s(["getQualityBasedOnNetwork",0,o],126967),e.s(["default",0,({src:e,alt:n="image icons",title:s,width:l,height:u,onClick:c,imageWidthWithNoModification:d,eagerLoad:p,format:m="webp",className:f="",customStyle:b,fallbackImgSrc:_,onLoad:h,fallbackWidth:y})=>{let g="u">typeof navigator&&"string"==typeof navigator.userAgent?o():80,[S,I]=(0,t.useState)(!1),E=(0,t.useRef)(null),P=p?"eager":"lazy",R=i(),T=d&&l?r(null,l,y):r(E.current,l,y),v=[,,,,].fill("").map((t,r)=>a({src:e,dpr:r+1,quality:g,width:T,format:m})).join(", "),A=(0,t.useMemo)(()=>a({src:e,quality:g,format:m,width:T,dpr:R}),[e,g,m,T,R]);return(0,t.useEffect)(()=>{let e;if(typeof IntersectionObserver>"u")return;e=new IntersectionObserver(t=>{t.forEach(t=>{if(t.isIntersecting){let t=E.current;t&&(e.unobserve(t),I(!0))}})},{root:null,rootMargin:"0px",threshold:.1});let t=E.current;return t&&e.observe(t),()=>{t&&e.unobserve(t)}},[A]),e?t.default.createElement("img",{srcSet:v,src:T&&(p||S)?A:void 0,sizes:`${T}px`,ref:E,alt:n,title:s,width:l,height:u,loading:P,fetchPriority:"eager"===P?"high":"low",style:b,className:`rX ${f}`,onError:({currentTarget:e})=>{e.onerror=null,_&&(e.src=a({src:_,quality:g,format:m,width:T,dpr:R}),e.srcset="")},onLoad:h,onClick:c}):null}],846950)},196483,e=>{"use strict";e.s(["ALERT_AUTO_HIDE_MIN_DURATION",0,3e3,"SANITIZED_ALERT_ARIA_LIVE_MAPPINGS",0,{success:"polite",error:"assertive",warning:"assertive",info:"polite"},"SANITIZED_ALERT_ROLE_MAPPINGS",0,{success:"status",error:"alert",warning:"alert",info:"status"},"TRANSPARENT_BUTTON_STYLE",0,{background:"transparent",border:"none",cursor:"pointer"},"VITE_PUBLIC_APOLLO_247_CDN_URL",0,"https://images.apollo247.in"])},618566,(e,t,r)=>{t.exports=e.r(976562)},614595,(e,t,r)=>{"use strict";var i=e.r(271645),n="function"==typeof Object.is?Object.is:function(e,t){return e===t&&(0!==e||1/e==1/t)||e!=e&&t!=t},a=i.useSyncExternalStore,o=i.useRef,s=i.useEffect,l=i.useMemo,u=i.useDebugValue;r.useSyncExternalStoreWithSelector=function(e,t,r,i,c){var d=o(null);if(null===d.current){var p={hasValue:!1,value:null};d.current=p}else p=d.current;var m=a(e,(d=l(function(){function e(e){if(!s){if(s=!0,a=e,e=i(e),void 0!==c&&p.hasValue){var t=p.value;if(c(t,e))return o=t}return o=e}if(t=o,n(a,e))return t;var r=i(e);return void 0!==c&&c(t,r)?(a=e,t):(a=e,o=r)}var a,o,s=!1,l=void 0===r?null:r;return[function(){return e(t())},null===l?void 0:function(){return e(l())}]},[t,r,i,c]))[0],d[1]);return s(function(){p.hasValue=!0,p.value=m},[m]),u(m),m}},313027,(e,t,r)=>{"use strict";e.i(247167),t.exports=e.r(614595)},390189,e=>{"use strict";var t,r=e.i(821726),i=e.i(188130),n=e.i(864286),a=e.i(462986);(0,n.isBrowser)()&&(window.clevertap=window.clevertap||{});let o=(e,t)=>{setTimeout(()=>{try{if((0,n.isBrowser)()&&window?.clevertap?.event)if(t){if("object"==typeof t){var r;r=t,Object.keys(r).forEach(e=>{"object"==typeof r[e]&&(r[e]=JSON.stringify(r[e]))}),(t=r).ts=`$D_${new Date().getTime()}`}window.clevertap.event.push(e,t)}else window.clevertap.event.push(e)}catch(e){}},0)};var s=((t={}).CLICKED="clicked",t.VIEWED="viewed",t);e.s(["CTEventTypes",()=>s,"clevertapChargedTracking",0,(e,t)=>{setTimeout(()=>{try{(0,n.isBrowser)()&&window?.clevertap?.event&&(t?window.clevertap.event.push(e,t):window.clevertap.event.push(e))}catch(e){}},0)},"clevertapPushNotification",0,()=>{setTimeout(()=>{if((0,n.isBrowser)())try{window.clevertap?.notifications?.push({titleText:`<img src="${a.NEXT_PUBLIC_247_CDN_URL}/images/honk_01.gif" />`,bodyText:"<h3> Never miss the latest updates and offers!</h3> <p>Get instant notifications from Apollo Pharmacy</p>",okButtonText:"Yes, I'm on Board",rejectButtonText:"Later",okButtonColor:"#fff",serviceWorkerPath:"/service-worker.js"})}catch(e){}},0)},"clevertapSetIndentity",0,e=>{setTimeout(()=>{if((0,n.isBrowser)())try{window.clevertap?.onUserLogin?.push({Site:{Identity:e?.slice(3)||""}})}catch(e){}},0)},"clevertapTracking",0,o,"clevertapUserLoginTracking",0,(e,t)=>{setTimeout(()=>{if((0,n.isBrowser)())try{window.clevertap?.onUserLogin?.push({Site:{Name:e?.firstName+" "+(e?.lastName||""),UHID:e?.uhid||"","MSG-whatsapp":t?.whatsappOptIn,Identity:e?.mobileNumber.slice(3)||"",MobileNumber:e?.mobileNumber||"",Phone:e?.mobileNumber||"",Firstname:e?.firstName||"",...e?.lastName&&{Lastname:e?.lastName},Relation:e?.relation||"",Gender:e?.gender==r.Gender.MALE?"M":e?.gender==r.Gender.FEMALE?"F":"",DOB:new Date(e?.dateOfBirth),...e?.emailAddress&&{Email:e?.emailAddress},...e?.photoUrl&&{Photo:e?.photoUrl},...e?.createdDate&&{CreatedDate:e?.createdDate}}})}catch(e){}},0)},"clevertapUserLogoutTracking",0,()=>{setTimeout(()=>{if((0,n.isBrowser)())try{window.clevertap.logout()}catch(e){}},0)},"default",0,o,"eventTracking",0,function(e,t){Promise.all([o(e,t)])},"getNavSrc",0,e=>({[i.clientRoutes.medicines()]:"Home",[i.clientRoutes.medicinesCart()]:"Cart",[i.clientRoutes.specialOffers()]:"Special Offers",[decodeURIComponent(i.clientRoutes.medicineDetailsOTC("[sku]"))]:"Pharmacy PDP",[decodeURIComponent(i.clientRoutes.medicineDetails("[sku]"))]:"Pharmacy PDP",[i.clientRoutes.medicineAllBrands()]:"All Brands",[i.clientRoutes.medicineSearch()]:"Search Medicines",[decodeURIComponent(i.clientRoutes.orderStatusInfo("[transactionId]","[orderStatus]"))]:"Order Status",[i.clientRoutes.myAccount()]:"My Account",[i.clientRoutes.yourOrders()]:"Orders",[decodeURIComponent(i.clientRoutes.orderDetails("[orderId]"))]:"Order Detail",[i.clientRoutes.addressBook()]:"Address Book",[i.clientRoutes.termsConditions()]:"Terms and Conditions",[i.clientRoutes.privacyPolicy()]:"Privacy Policy",[i.clientRoutes.FAQ()]:"FAQ",[i.clientRoutes.needHelp()]:"Need Help",[i.clientRoutes.myPayments()]:"My Payments",[decodeURIComponent(i.clientRoutes.payMedicineJuspay("[orderId]"))]:"Pay Medicine",[i.clientRoutes.medicinePrescription()]:"Medicine Prescription",[i.clientRoutes.myMembership()]:"My Membership",[decodeURIComponent(i.clientRoutes.sitemap("[...sitemap]"))]:"Sitemap",[i.clientRoutes.oneApolloMembership()]:"One Apollo Membership",[i.clientRoutes.voucherBalance()]:"Voucher Balance",[i.clientRoutes.apolloProHealth()]:"Apollo Pro Health",[i.clientRoutes.careLanding()]:"Circle Landing",[i.clientRoutes.revampedUploadPrescription()]:"Upload Prescription",[decodeURIComponent(i.clientRoutes.careMembership())]:"Circle Membership",[i.clientRoutes.storeLocator()]:"Store Locator",[decodeURIComponent(i.clientRoutes.salt("[sku]"))]:"Salt Page",[i.clientRoutes.manufacturerDirectory()]:"Manufacturers",[i.clientRoutes.buyAgainProducts()]:"Buy Again Products",[i.clientRoutes.recommendedProducts()]:"Recommended Products",[decodeURIComponent(i.clientRoutes.returnRequest("[orderId]"))]:"Return Request",[decodeURIComponent(i.clientRoutes.searchByMedicine("search-medicines","[text]"))]:"Search Listing",[decodeURIComponent(i.clientRoutes.searchByMedicine("shop-by-category","[category]"))]:"Shop By Category",[decodeURIComponent(i.clientRoutes.searchByMedicine("shop-by-brand","[brand]"))]:"Shop By Brand",[decodeURIComponent(i.clientRoutes.searchByMedicine("shop-by-health-conditions","[condition]"))]:"Shop By Health Condition"})[e]||""])},517747,e=>{"use strict";var t=e.i(702807);let r=t.default`
+  mutation AddNewProfile($PatientProfileInput: PatientProfileInput!) {
+    addNewProfile(patientProfileInput: $PatientProfileInput) {
+      patient {
+        id
+        uhid
+        mobileNumber
+        firstName
+        lastName
+        emailAddress
+        gender
+        relation
+        dateOfBirth
+      }
+    }
+  }
+`,i=t.default`
+  mutation CreateUserSubscription(
+    $userSubscription: CreateUserSubscriptionInput!
+  ) {
+    CreateUserSubscription(UserSubscription: $userSubscription) {
+      code
+      success
+      message
+      response {
+        _id
+        mobile_number
+        status
+        start_date
+        end_date
+        group_plan {
+          name
+          plan_id
+          plan_summary
+        }
+      }
+    }
+  }
+`,n=t.default`
+  mutation EditProfile($editProfileInput: EditProfileInput!) {
+    editProfile(editProfileInput: $editProfileInput) {
+      patient {
+        id
+        photoUrl
+        firstName
+        lastName
+        relation
+        gender
+        dateOfBirth
+        emailAddress
+      }
+    }
+  }
+`;t.default`
+  query verifyExternalAuthToken(
+    $verifyExternalAuthTokenInput: VerifyExternalAuthTokenInput
+  ) {
+    verifyExternalAuthToken(
+      verifyExternalAuthTokenInput: $verifyExternalAuthTokenInput
+    ) {
+      status
+      reason
+      authToken
+      isBlocked
+      incorrectAttempts
+      mobileNumber
+      patientId
+      patientDetails {
+        firstName
+        lastName
+        email
+      }
+    }
+  }
+`;let a=t.default`
+  query GetAllGroupBannersOfUser(
+    $mobile_number: String
+    $banner_context: String!
+    $user_state: UserState
+  ) {
+    GetAllGroupBannersOfUser(
+      mobile_number: $mobile_number
+      banner_context: $banner_context
+      user_state: $user_state
+    ) {
+      message
+      response {
+        banner
+        banner_context
+        banner_template_info
+        banner_visibility_mode
+        meta
+        cta_action
+        is_active
+        priority
+        banner_display_type
+      }
+    }
+  }
+`,o=t.default`
+  query GetCurrentPatients {
+    getCurrentPatients {
+      patients {
+        id
+        mobileNumber
+        firstName
+        lastName
+        relation
+        gender
+        uhid
+        dateOfBirth
+        emailAddress
+        photoUrl
+        createdDate
+      }
+    }
+  }
+`;t.default`
+  query getPersonalizedOffers {
+    getPersonalizedOffers {
+      response {
+        personalized_data {
+          offers_for_you {
+            offer_id
+            template_name
+            coupon_code
+            notch_text {
+              text
+              values {
+                time_till_expired_at {
+                  value
+                }
+              }
+            }
+            is_active
+            expired_at
+            title {
+              text
+            }
+            subtitle {
+              text
+            }
+            cta {
+              text
+              path {
+                vertical
+                param
+              }
+            }
+          }
+          global_search_text {
+            search_text {
+              text
+              created_at
+            }
+          }
+        }
+      }
+    }
+  }
+`,t.default`
+  query pharmaSubstitution($substitutionInput: PharmaSubstitutionRequest) {
+    pharmaSubstitution(substitutionInput: $substitutionInput) {
+      substitutes {
+        sku
+        name
+        price
+        mou
+        moq
+        image
+        thumbnail
+        small_image
+        is_express
+        is_in_contract
+        is_prescription_required
+        description
+        subcategory
+        type_id
+        url_key
+        is_in_stock
+        MaxOrderQty
+        sell_online
+        manufacturer
+        dc_availability
+        tat
+        tatDuration
+        tatPrice
+      }
+    }
+  }
+`;let s=t.default`
+  query GetPatientByMobileNumber($mobileNumber: String) {
+    getPatientByMobileNumber(mobileNumber: $mobileNumber) {
+      patients {
+        id
+        externalAuthId
+        mobileNumber
+        firstName
+        lastName
+        relation
+        gender
+        uhid
+        dateOfBirth
+        emailAddress
+        photoUrl
+        referralCode
+        partnerId
+        createdDate
+        patientMedicalHistory {
+          height
+          weight
+          bp
+          dietAllergies
+          bloodGroup
+        }
+      }
+    }
+  }
+`,l=t.default`
+  mutation pharmaReOrder($transactionId: Int!, $billNumber: String) {
+    pharmaReOrder(transactionId: $transactionId, billNumber: $billNumber) {
+      success
+      isCart
+    }
+  }
+`,u=t.default`
+  query getRecommendedProductsList(
+    $patientUhid: String!
+    $pageNo: Int
+    $pageSize: Int
+  ) {
+    getRecommendedProductsList(
+      patientUhid: $patientUhid
+      pageNo: $pageNo
+      pageSize: $pageSize
+    ) {
+      meta {
+        pageNo
+        pageSize
+        total
+      }
+      recommendedProducts {
+        productSku
+        productName
+        productImage
+        productPrice
+        productSpecialPrice
+        isPrescriptionNeeded
+        categoryName
+        status
+        mou
+        moq
+        imageBaseUrl
+        id
+        is_in_stock
+        small_image
+        thumbnail
+        type_id
+        quantity
+        isShippable
+        MaxOrderQty
+        urlKey
+        subcategory
+      }
+    }
+  }
+`;t.default`
+  query getCartRecommendedProductsList {
+    getCartRecommendedProductsList {
+      cartRecommendedProducts {
+        id
+        MaxOrderQty
+        dc_availability
+        description
+        image
+        is_express
+        is_in_contract
+        is_in_stock
+        is_prescription_required
+        merchandising
+        mou
+        moq
+        name
+        price
+        sell_online
+        sku
+        small_image
+        special_price
+        status
+        subcategory
+        suggested_qty
+        thumbnail
+        type_id
+        url_key
+        tag
+      }
+    }
+  }
+`,t.default`
+  query identifyHdfcCustomer($mobile_number: String!, $DOB: Date!) {
+    identifyHdfcCustomer(mobileNumber: $mobile_number, DOB: $DOB) {
+      status
+      token
+    }
+  }
+`;let c=t.default`
+  query initiateCallForPartner(
+    $mobileNumber: String!
+    $benefitId: String!
+    $userSubscriptionId: String
+  ) {
+    initiateCallForPartner(
+      mobileNumber: $mobileNumber
+      benefitId: $benefitId
+      userSubscriptionId: $userSubscriptionId
+    ) {
+      success
+    }
+  }
+`,d=t.default`
+  mutation UpdatePatient($patientInput: UpdatePatientInput!) {
+    updatePatient(patientInput: $patientInput) {
+      patient {
+        id
+        mobileNumber
+        firstName
+        lastName
+        relation
+        gender
+        uhid
+        dateOfBirth
+        emailAddress
+        partnerId
+      }
+    }
+  }
+`,p=t.default`
+  mutation uploadDocument($UploadDocumentInput: UploadDocumentInput) {
+    uploadDocument(uploadDocumentInput: $UploadDocumentInput) {
+      status
+      fileId
+      filePath
+    }
+  }
+`,m=t.default`
+  mutation uploadFile($fileType: String, $base64FileInput: String) {
+    uploadFile(fileType: $fileType, base64FileInput: $base64FileInput) {
+      filePath
+    }
+  }
+`,f=t.default`
+  mutation ReUploadPrescription($prescriptionInput: PrescriptionReUploadInput) {
+    reUploadPrescription(prescriptionInput: $prescriptionInput) {
+      success
+    }
+  }
+`,b=t.default`
+  mutation SendHelpMail($HelpEmailInput: HelpEmailInputType) {
+    createHelpTicketv2(helpEmailInput: $HelpEmailInput) {
+      statusType
+      subject
+      type
+      category
+      createdTime
+      ticketNumber
+      modifiedTime
+      closedTime
+      id
+      status
+      isDuplicate
+    }
+  }
+`,_=t.default`
+  query getOneApolloUserTransactions {
+    getOneApolloUserTransactions {
+      earnedHC
+      transactionDate
+      grossAmount
+      netAmount
+      transactionDate
+      businessUnit
+      redeemedHC
+    }
+  }
+`,h=t.default`
+  mutation DeleteProfile($patientId: String) {
+    deleteProfile(patientId: $patientId) {
+      status
+    }
+  }
+`,y=t.default`
+  mutation addDiabeticQuestionnaire(
+    $addDiabeticQuestionnaireInput: AddDiabeticQuestionnaireInput
+  ) {
+    addDiabeticQuestionnaire(
+      addDiabeticQuestionnaireInput: $addDiabeticQuestionnaireInput
+    ) {
+      success
+    }
+  }
+`;t.default`
+  query GetCircleSavingsOfUserByMobile($mobile_number: String!) {
+    GetCircleSavingsOfUserByMobile(mobile_number: $mobile_number) {
+      success
+      response
+    }
+  }
+`;let g=t.default`
+  query getPreviousOrdersSkusV2 {
+    getPreviousOrdersSkusV2 {
+      PreviousOrderSkusV2 {
+        id
+        status
+        sku
+        name
+        price
+        specialPrice
+        mou
+        moq
+        image
+        thumbnail
+        smallImage
+        isExpress
+        isInContract
+        isPrescriptionRequired
+        description
+        subcategory
+        typeID
+        urlKey
+        isInStock
+        maxOrderQty
+        sellOnline
+        manufacturer
+        dcAvailability
+        packSize
+        packForm
+        tag {
+          name
+          value
+        }
+        cashback {
+          value
+          percent
+        }
+      }
+    }
+  }
+`,S=t.default`
+  query getUserProfileType($mobileNumber: String!) {
+    getUserProfileType(mobileNumber: $mobileNumber) {
+      profile
+    }
+  }
+`;e.s(["ADD_DIABETIC_QUESTIONNAIRE",0,y,"ADD_PROFILE",0,r,"CREATE_SUBSCRIPTION",0,i,"DELETE_PROFILE",0,h,"EDIT_PROFILE",0,n,"GET_ALL_BANNERS_OF_USER",0,a,"GET_CURRENT_PATIENTS",0,o,"GET_ONEAPOLLO_USERTXNS",0,_,"GET_PATIENT_BY_MOBILE_NUMBER",0,s,"GET_PREVIOUS_ORDERS_SKUS_V2",0,g,"GET_RECOMMENDED_PRODUCTS_LIST",0,u,"GET_USER_PROFILE_TYPE",0,S,"INITIATE_CALL_FOR_PARTNER",0,c,"PHARMA_RE_ORDER",0,l,"RE_UPLOAD_PRESCRIPTION",0,f,"SEND_HELP_EMAIL",0,b,"UPDATE_PATIENT",0,d,"UPLOAD_DOCUMENT",0,p,"UPLOAD_FILE",0,m])},650707,e=>{"use strict";var t=e.i(864286);e.s(["_urTracking",0,e=>{let{userId:r,isApolloCustomer:i,profileFetchedCount:n}=e;setTimeout(()=>{try{(0,t.isBrowser)()&&window._ur&&window._ur(r,i,n)}catch(e){}},0)},"dataLayerTracking",0,e=>{setTimeout(()=>{try{(0,t.isBrowser)()&&window?.dataLayer?.push(e)}catch(e){}},0)},"gtmTracking",0,e=>{let{category:r,action:i,label:n,value:a,ecommObj:o}=e;setTimeout(()=>{try{(0,t.isBrowser)()&&window&&window.gep&&window.gep(r,i,n,a,o)}catch(e){}},0)}])},864286,e=>{"use strict";e.s(["isBrowser",0,()=>!0])},772746,e=>{"use strict";e.i(247167);let t=RegExp("^(?:[a-z]+:)?//","i");e.s(["ABSOLUTE_URL_REGEX",0,t,"HOT_SELLERS",0,"hot_sellers","MedicineFeedBackData",0,{POOR:{question:"What went wrong?",options:["Delivery person was impolite","Packaging","Delivery time","Difficulty in using the App","Medicine unavailability","Comparatively better offers on other portals","Payment-related issues on App","Medicine delivered was nearing expiry date","Incorrect medicines delivered","Unvailability of some medicines","Others"]},OKAY:{question:"What could have been improved?",options:["Delivery time","Medicine options to choose from ","Ordering experience","Better offers","Better packaging","Others"]},GOOD:{question:"Thanks! How can we make this a Great experience for you?",options:["Add more medicines to choose from","Simplify ordering experience","Better offers","Improve packaging","Improve delivery time","Others"]},GREAT:{question:"What went well?",options:["Ordering experience","Variety and options to choose from","Delivery time","Delivery person was friendly and polite","Great offers and prices","Others"]}},"NEXT_PUBLIC_APOLLO_KAVACH_WHATSAPP_LINK",0,"https://wa.me/919355247247?text=Order_medicines","NEXT_PUBLIC_DISCOURSE_BASE_URL",0,"https://apigateway.apollo247.in/discourse-review","NEXT_PUBLIC_EXPRESS_HOURS",0,"6","NEXT_PUBLIC_PHARMACY_MAGENTO_BASE_URL",0,"https://magento.apollo247.com","NEXT_PUBLIC_PHARMACY_MAGENTO_SSR_BASE_URL",0,"http://magento.pd.apollo247.in","NEXT_PUBLIC_PHARMACY_MEDICINE_QUANTITY",0,"10","NEXT_PUBLIC_PHARMACY_MED_AUTH_TOKEN",0,"Bearer 2o1kd4bjapqifpb27fy7tnbivu8bqo1d","NEXT_PUBLIC_PHARMACY_MED_IMAGES_BASE_URL",0,"https://images.apollo247.in/pub/media","NEXT_PUBLIC_SHOW_BANNER_APOLLO_KAVACH_WHATSAPP",0,"true","NEXT_PUBLIC_SPECIAL_OFFERS_META_DESC",0,"Save big on Apollo Pharmacy with the latest discounts and coupon codes. Get special offers on top brands online. Buy medicines, supplements, health essentials & more!","OUT_OF_STOCK_MESSAGE",0,"Sorry, this item is out of stock in your area","PRODUCTION_BASE_URL",0,"https://www.apollopharmacy.in","SEARCH_MEDICINES",0,"search-medicines","SHOP_BY_BRAND",0,"shop_by_brand","SHOP_BY_CATEGORY",0,"shop-by-category","SHOP_BY_SUB_CATEGORY",0,"shop-by-sub-category","TIMEOUT",0,{GOOGLE_SIGN_IN_POP_UP_TIMEOUT:1e4},"TOOL_TIP_MOQ_TEXT",0,"This offer price requires a minimum quantity of this product in your order. A minimum order quantity allows us to offer a lower price against the item that would otherwise be cost-prohibitive to ship.","TYPE_OF_PRODUCT_DIRECTORY",0,{MEDICINE:"medicine",OTC:"otc"},"UPLOAD_BTN",0,"Order NOW!","WHATSAPP_AT",0,"Whatsapp @+91 -9355247247","WHATSAPP_TO_ORDER",0,"WhatsApp to Order","WHATSAPP_TO_ORDER_NUMBER",0,"+91- 9355247247","config",0,{PHARMACY:"Pharmacy",MEDICINE:"Medicine"}])},266652,155487,e=>{"use strict";var t=e.i(271645),r=e.i(313027),i="default"in t?t.default:t,n=Symbol.for("react-redux-context"),a="u">typeof globalThis?globalThis:{},o=function(){if(!i.createContext)return{};let e=a[n]??(a[n]=new Map),t=e.get(i.createContext);return t||(t=i.createContext(null),e.set(i.createContext,t)),t}(),s=()=>{throw Error("uSES not initialized!")};function l(e=o){return function(){return i.useContext(e)}}var u=l(),c=s,d=(e,t)=>e===t,p=function(e=o){let t=e===o?u:l(e),r=(e,r={})=>{let{equalityFn:n=d,devModeChecks:a={}}="function"==typeof r?{equalityFn:r}:r,{store:o,subscription:s,getServerState:l,stabilityCheck:u,identityFunctionCheck:p}=t();i.useRef(!0);let m=i.useCallback({[e.name]:t=>e(t)}[e.name],[e,u,a.stabilityCheck]),f=c(s.addNestedSub,o.getState,l||o.getState,m,n);return i.useDebugValue(f),f};return Object.assign(r,{withTypes:()=>r}),r}();Symbol.for("react.element"),Symbol.for("react.portal"),Symbol.for("react.fragment"),Symbol.for("react.strict_mode"),Symbol.for("react.profiler"),Symbol.for("react.provider"),Symbol.for("react.context"),Symbol.for("react.server_context"),Symbol.for("react.forward_ref"),Symbol.for("react.suspense"),Symbol.for("react.suspense_list"),Symbol.for("react.memo"),Symbol.for("react.lazy"),Symbol.for("react.offscreen"),Symbol.for("react.client.reference");var m={notify(){},get:()=>[]},f="u">typeof window&&void 0!==window.document&&void 0!==window.document.createElement,b="u">typeof navigator&&"ReactNative"===navigator.product,_=f||b?i.useLayoutEffect:i.useEffect;function h(e=o){let t=e===o?u:l(e),r=()=>{let{store:e}=t();return e};return Object.assign(r,{withTypes:()=>r}),r}var y=h(),g=function(e=o){let t=e===o?y:h(e),r=()=>t().dispatch;return Object.assign(r,{withTypes:()=>r}),r}();c=r.useSyncExternalStoreWithSelector,t.useSyncExternalStore,e.s(["Provider",0,function({store:e,context:t,children:r,serverState:n,stabilityCheck:a="once",identityFunctionCheck:s="once"}){let l=i.useMemo(()=>{let t=function(e){let t,r=m,i=0,n=!1;function a(){l.onStateChange&&l.onStateChange()}function o(){if(i++,!t){let i,n;t=e.subscribe(a),i=null,n=null,r={clear(){i=null,n=null},notify(){let e=i;for(;e;)e.callback(),e=e.next},get(){let e=[],t=i;for(;t;)e.push(t),t=t.next;return e},subscribe(e){let t=!0,r=n={callback:e,next:null,prev:n};return r.prev?r.prev.next=r:i=r,function(){t&&null!==i&&(t=!1,r.next?r.next.prev=r.prev:n=r.prev,r.prev?r.prev.next=r.next:i=r.next)}}}}}function s(){i--,t&&0===i&&(t(),t=void 0,r.clear(),r=m)}let l={addNestedSub:function(e){o();let t=r.subscribe(e),i=!1;return()=>{i||(i=!0,t(),s())}},notifyNestedSubs:function(){r.notify()},handleChangeWrapper:a,isSubscribed:function(){return n},trySubscribe:function(){n||(n=!0,o())},tryUnsubscribe:function(){n&&(n=!1,s())},getListeners:()=>r};return l}(e);return{store:e,subscription:t,getServerState:n?()=>n:void 0,stabilityCheck:a,identityFunctionCheck:s}},[e,n,a,s]),u=i.useMemo(()=>e.getState(),[e]);return _(()=>{let{subscription:t}=l;return t.onStateChange=t.notifyNestedSubs,t.trySubscribe(),u!==e.getState()&&t.notifyNestedSubs(),()=>{t.tryUnsubscribe(),t.onStateChange=void 0}},[l,u]),i.createElement((t||o).Provider,{value:l},r)},"batch",0,function(e){e()},"useDispatch",0,g,"useSelector",0,p,"useStore",0,y],155487),e.s(["useAppDispatch",0,()=>g(),"useAppSelector",0,p,"useAppStore",0,()=>y()],266652)},671904,e=>{"use strict";var t,r=((t={}).UNRESOLVED="UNRESOLVED",t.SIGNEDIN="SIGNEDIN",t.SIGNEDOUT="SIGNEDOUT",t);e.s(["SignedinState",()=>r])},640875,e=>{"use strict";let t=(0,e.i(848643).createDraftSafeSelector)(e=>e?.auth,e=>e?.currentPatientId);e.s(["default",0,t])},394480,e=>{"use strict";let t=(0,e.i(848643).createDraftSafeSelector)(e=>e?.auth,e=>e?.signedInStatus);e.s(["default",0,t])}]);

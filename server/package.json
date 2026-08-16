@@ -1,0 +1,31 @@
+{
+  "name": "Aaroham-server",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:clear": "node db/clear_data.js",
+    "clear:db": "node db/clear_data.js",
+    "clean": "node db/clear_data.js",
+    "db:migrate": "node db/migrate.js",
+    "db:init": "node db/setup_db.js",
+    "db:seed": "node db/seed.js",
+    "db:reset": "node db/migrate.js --reset && node db/seed.js",
+    "db:rebuild": "node db/rebuild_and_seed.js",
+    "db:import": "node db/import.js",
+    "test:appointments": "node tests/appointments.e2e.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.0",
+    "pg": "^8.22.0",
+    "zod": "^4.4.3"
+  }
+}

@@ -4,7 +4,11 @@ import { query } from '../config/db.js';
 import { env } from '../config/env.js';
 import { sendOtpToUser, verifyOtpCode } from '../services/twilio.service.js';
 
-const JWT_SECRET = env.jwtSecret || 'Aaroham_super_secret_jwt_key_2026';
+// Load JWT secret from environment only; fail in production if missing
+const JWT_SECRET = env.jwtSecret || process.env.JWT_SECRET || null;
+if (!JWT_SECRET && env.nodeEnv === 'production') {
+  throw new Error('JWT_SECRET is not set in environment. Aborting startup.');
+}
 
 export async function registerWorker(req, res, next) {
   try {
@@ -54,7 +58,7 @@ export async function registerWorker(req, res, next) {
         employer_name, employer_phone_number, is_vaccinated,
         spoken_language, previous_health_issues
       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
-      RETURNING id, full_name, ABHA_id, email, age, home_state, current_address, date_of_birth, gender, blood_group, employer_name, employer_phone_number, is_vaccinated, spoken_language, previous_health_issues, created_at`,
+      RETURNING id, full_name, ABHA_id, email, age, home_state, current_address, date_of_birth, gender, blood_group, employer_name, employer_phone_number, is_vaccinated, spoken_language, previous_[...]
       [
         full_name,
         ABHA_id,
@@ -219,7 +223,7 @@ export async function registerAdmin(req, res, next) {
 
     const existing = await query('SELECT id FROM government_users WHERE email = $1', [email]);
     if (existing.rows.length > 0) {
-      return res.status(400).json({
+      return res.status(400).njson({
         success: false,
         error: { message: 'An admin user with this email already exists.' },
       });
